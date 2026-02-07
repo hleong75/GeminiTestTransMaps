@@ -16,8 +16,8 @@ interface GtfsDao {
     )
     suspend fun getStopsInBoundingBox(
         minLat: Double,
-        minLon: Double,
         maxLat: Double,
+        minLon: Double,
         maxLon: Double,
     ): List<StopEntity>
 

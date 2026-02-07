@@ -152,10 +152,10 @@ private fun ensureStopLayer(style: Style) {
     if (style.getLayer(STOP_LAYER_ID) == null) {
         style.addLayer(
             CircleLayer(STOP_LAYER_ID, STOP_SOURCE_ID).withProperties(
-                circleColor("#1E88E5"),
-                circleRadius(5f),
-                circleStrokeColor("#FFFFFF"),
-                circleStrokeWidth(1.5f),
+                circleColor(STOP_CIRCLE_COLOR),
+                circleRadius(STOP_CIRCLE_RADIUS),
+                circleStrokeColor(STOP_STROKE_COLOR),
+                circleStrokeWidth(STOP_STROKE_WIDTH),
             ),
         )
     }
@@ -220,3 +220,7 @@ private fun rememberMapViewWithLifecycle(): MapView {
 
 private const val STOP_SOURCE_ID = "stops-source"
 private const val STOP_LAYER_ID = "stops-layer"
+private const val STOP_CIRCLE_COLOR = "#1E88E5"
+private const val STOP_STROKE_COLOR = "#FFFFFF"
+private const val STOP_CIRCLE_RADIUS = 5f
+private const val STOP_STROKE_WIDTH = 1.5f

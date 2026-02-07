@@ -95,7 +95,7 @@ data class TripEntity(
     tableName = "stop_times",
     primaryKeys = ["trip_id", "stop_sequence"],
     indices = [
-        Index(value = ["stop_id", "arrival_time_sec"]),
+        Index(value = ["stop_id", "departure_time_sec"]),
     ],
 )
 data class StopTimeEntity(

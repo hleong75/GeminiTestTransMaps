@@ -25,8 +25,8 @@ interface GtfsDao {
         """
         SELECT * FROM stop_times
         WHERE stop_id = :stopId
-        AND arrival_time_sec >= :timeSec
-        ORDER BY arrival_time_sec
+        AND departure_time_sec >= :timeSec
+        ORDER BY departure_time_sec
         LIMIT :limit
         """,
     )

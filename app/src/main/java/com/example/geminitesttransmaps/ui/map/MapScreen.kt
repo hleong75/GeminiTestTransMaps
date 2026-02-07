@@ -34,7 +34,7 @@ import org.maplibre.android.location.LocationComponentActivationOptions
 import org.maplibre.android.location.modes.CameraMode
 import org.maplibre.android.location.modes.RenderMode
 import org.maplibre.android.maps.MapView
-import org.maplibre.android.maps.MapboxMap
+import org.maplibre.android.maps.MapboxMap as MapLibreMap
 import org.maplibre.android.maps.Style
 import org.maplibre.android.style.layers.CircleLayer
 import org.maplibre.android.style.layers.PropertyFactory.circleColor
@@ -55,22 +55,30 @@ fun MapScreen(
 ) {
     val context = LocalContext.current
     val mapView = rememberMapViewWithLifecycle()
-    var mapboxMap by remember { mutableStateOf<MapboxMap?>(null) }
+    var mapLibreMap by remember { mutableStateOf<MapLibreMap?>(null) }
     var mapStyle by remember { mutableStateOf<Style?>(null) }
     val hasLocationPermission = remember { mutableStateOf(hasLocationPermission(context)) }
     var isLocationEnabled by remember { mutableStateOf(false) }
     var isTrackingEnabled by remember { mutableStateOf(false) }
+    val markLocationEnabled = {
+        isLocationEnabled = true
+        isTrackingEnabled = true
+    }
+    val enableLocation = remember(context) {
+        { mapInstance: MapLibreMap, style: Style, setLocationEnabled: () -> Unit ->
+            if (enableUserLocation(context, mapInstance, style)) {
+                setLocationEnabled()
+            }
+        }
+    }
     val permissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission(),
     ) { granted ->
         hasLocationPermission.value = granted
         if (granted) {
-            mapboxMap?.let { mapInstance ->
+            mapLibreMap?.let { mapInstance ->
                 mapStyle?.let { style ->
-                    if (enableUserLocation(context, mapInstance, style)) {
-                        isLocationEnabled = true
-                        isTrackingEnabled = true
-                    }
+                    enableLocation(mapInstance, style, setLocationEnabled = markLocationEnabled)
                 }
             }
         } else {
@@ -80,21 +88,18 @@ fun MapScreen(
 
     LaunchedEffect(mapView) {
         mapView.getMapAsync { mapInstance ->
-            mapboxMap = mapInstance
+            mapLibreMap = mapInstance
         }
     }
 
-    LaunchedEffect(styleUri, mapboxMap) {
-        val mapInstance = mapboxMap ?: return@LaunchedEffect
+    LaunchedEffect(styleUri, mapLibreMap) {
+        val mapInstance = mapLibreMap ?: return@LaunchedEffect
         mapInstance.setStyle(Style.Builder().fromUri(styleUri)) { style ->
             mapStyle = style
             ensureStopLayer(style)
             updateStopSource(style, stops)
             if (hasLocationPermission.value) {
-                if (enableUserLocation(context, mapInstance, style)) {
-                    isLocationEnabled = true
-                    isTrackingEnabled = true
-                }
+                enableLocation(mapInstance, style, setLocationEnabled = markLocationEnabled)
             }
         }
     }
@@ -124,7 +129,7 @@ fun MapScreen(
         FloatingActionButton(
             onClick = {
                 if (hasLocationPermission.value) {
-                    mapboxMap?.let { mapInstance ->
+                    mapLibreMap?.let { mapInstance ->
                         if (isLocationEnabled) {
                             val nextMode = if (isTrackingEnabled) {
                                 CameraMode.NONE
@@ -135,10 +140,7 @@ fun MapScreen(
                             isTrackingEnabled = nextMode == CameraMode.TRACKING
                         } else {
                             mapStyle?.let { style ->
-                                if (enableUserLocation(context, mapInstance, style)) {
-                                    isLocationEnabled = true
-                                    isTrackingEnabled = true
-                                }
+                                enableLocation(mapInstance, style, setLocationEnabled = markLocationEnabled)
                             }
                         }
                     }
@@ -187,7 +189,7 @@ private fun updateStopSource(style: Style, stops: List<StopEntity>) {
         ?.setGeoJson(FeatureCollection.fromFeatures(features))
 }
 
-private fun enableUserLocation(context: Context, map: MapboxMap, style: Style): Boolean {
+private fun enableUserLocation(context: Context, map: MapLibreMap, style: Style): Boolean {
     if (!hasLocationPermission(context)) {
         return false
     }

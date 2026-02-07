@@ -30,7 +30,7 @@ class RoutingEngine(
         if (startStopTimes.isEmpty()) {
             return emptyList()
         }
-        val tripIds = startStopTimes.map { it.tripId }.distinct()
+        val tripIds = startStopTimes.map { it.tripId }.toSet().toList()
         val endStopTimes = loadStopTimesForTrips(endStopId, tripIds)
         if (endStopTimes.isEmpty()) {
             return emptyList()
@@ -41,6 +41,7 @@ class RoutingEngine(
         return tripIds.mapNotNull { tripId ->
             val trip = tripsById[tripId] ?: return@mapNotNull null
             val startTime = startTimesByTrip[tripId]
+                ?.filter { it.departureTimeSec >= departureTimeSec }
                 ?.minWithOrNull(
                     compareBy<StopTimeEntity> { it.departureTimeSec }
                         .thenBy { it.stopSequence },

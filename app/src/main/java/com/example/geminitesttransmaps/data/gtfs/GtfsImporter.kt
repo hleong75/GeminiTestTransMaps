@@ -234,10 +234,7 @@ class GtfsImporter(
         val hours = parts[0].toIntOrNull() ?: return null
         val minutes = parts[1].toIntOrNull() ?: return null
         val seconds = parts[2].toIntOrNull() ?: return null
-        if (hours < 0) {
-            return null
-        }
-        if (hours > maxGtfsHours) {
+        if (hours !in 0..maxGtfsHours) {
             return null
         }
         if (minutes !in 0..59 || seconds !in 0..59) {
@@ -270,6 +267,6 @@ class GtfsImporter(
 
     companion object {
         const val DEFAULT_BATCH_SIZE = 500
-        const val DEFAULT_MAX_GTFS_HOURS = 48
+        const val DEFAULT_MAX_GTFS_HOURS = 24 * 2
     }
 }

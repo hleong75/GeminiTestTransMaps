@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Box
@@ -18,6 +19,7 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -59,13 +61,13 @@ fun MapScreen(
     val mapView = rememberMapViewWithLifecycle()
     var mapLibreMap by remember { mutableStateOf<MapLibreMap?>(null) }
     var mapStyle by remember { mutableStateOf<Style?>(null) }
-    val hasLocationPermission = remember { mutableStateOf(hasLocationPermission(context)) }
+    var hasLocationPermission by rememberSaveable { mutableStateOf(hasLocationPermission(context)) }
     var isLocationEnabled by remember { mutableStateOf(false) }
     var isTrackingActive by remember { mutableStateOf(false) }
     val permissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission(),
     ) { granted ->
-        hasLocationPermission.value = granted
+        hasLocationPermission = granted
         if (granted) {
             mapLibreMap?.let { mapInstance ->
                 mapStyle?.let { style ->
@@ -82,22 +84,30 @@ fun MapScreen(
 
     LaunchedEffect(mapView) {
         mapView.getMapAsync { mapInstance ->
-            mapLibreMap = mapInstance
+            runCatching {
+                mapLibreMap = mapInstance
+            }.onFailure { throwable ->
+                Log.e(MAP_LOG_TAG, "Map initialization failed", throwable)
+            }
         }
     }
 
     LaunchedEffect(styleUri, mapLibreMap) {
         val mapInstance = mapLibreMap ?: return@LaunchedEffect
-        mapInstance.setStyle(Style.Builder().fromUri(styleUri)) { style ->
-            mapStyle = style
-            ensureStopLayer(style)
-            updateStopSource(style, stops)
-            if (hasLocationPermission.value) {
-                if (enableUserLocation(context, mapInstance, style)) {
-                    isLocationEnabled = true
-                    isTrackingActive = true
+        runCatching {
+            mapInstance.setStyle(Style.Builder().fromUri(styleUri)) { style ->
+                mapStyle = style
+                ensureStopLayer(style)
+                updateStopSource(style, stops)
+                if (hasLocationPermission) {
+                    if (enableUserLocation(context, mapInstance, style)) {
+                        isLocationEnabled = true
+                        isTrackingActive = true
+                    }
                 }
             }
+        }.onFailure { throwable ->
+            Log.e(MAP_LOG_TAG, "Failed to load map style: $styleUri", throwable)
         }
     }
 
@@ -125,7 +135,7 @@ fun MapScreen(
         }
         FloatingActionButton(
             onClick = {
-                if (hasLocationPermission.value) {
+                if (hasLocationPermission) {
                     mapLibreMap?.let { mapInstance ->
                         if (isLocationEnabled) {
                             val nextMode = if (isTrackingActive) {
@@ -251,3 +261,5 @@ private object MapScreenDefaults {
     const val STOP_CIRCLE_RADIUS = 5f
     const val STOP_STROKE_WIDTH = 1.5f
 }
+
+private const val MAP_LOG_TAG = "MapScreen"

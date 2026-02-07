@@ -38,7 +38,11 @@ fun SettingsScreen(
     val mbtilesLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent(),
     ) { uri ->
-        uri?.let(onImportMbtiles)
+        uri?.let { selection ->
+            if (selection.toString().lowercase().endsWith(".mbtiles")) {
+                onImportMbtiles(selection)
+            }
+        }
     }
 
     Scaffold(
@@ -87,4 +91,4 @@ fun SettingsScreen(
 }
 
 private const val GTFS_MIME_TYPE = "application/zip"
-private const val MBTILES_MIME_TYPE = "*/*"
+private const val MBTILES_MIME_TYPE = "application/octet-stream"

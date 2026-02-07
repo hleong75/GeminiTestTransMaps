@@ -125,4 +125,5 @@ fun HomeScreen(
     }
 }
 
+// Aligns the floating label beneath the SearchBar's default height + top padding.
 private val searchBarOverlayPadding = 84.dp

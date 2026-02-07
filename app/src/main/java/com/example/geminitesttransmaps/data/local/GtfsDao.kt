@@ -7,9 +7,6 @@ import androidx.room.Query
 
 @Dao
 interface GtfsDao {
-    companion object {
-        const val DEFAULT_STOP_TIMES_LIMIT = 50
-    }
     @Query(
         """
         SELECT * FROM stops
@@ -53,4 +50,8 @@ interface GtfsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCalendars(calendars: List<CalendarEntity>)
+
+    companion object {
+        const val DEFAULT_STOP_TIMES_LIMIT = 50
+    }
 }

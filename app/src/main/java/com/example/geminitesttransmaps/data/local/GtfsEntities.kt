@@ -9,6 +9,8 @@ import androidx.room.PrimaryKey
     tableName = "stops",
     indices = [
         Index(value = ["stop_lat", "stop_lon"]),
+        Index(value = ["stop_lat"]),
+        Index(value = ["stop_lon"]),
     ],
 )
 data class StopEntity(

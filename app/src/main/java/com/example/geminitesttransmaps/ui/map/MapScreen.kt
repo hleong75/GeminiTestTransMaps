@@ -54,6 +54,7 @@ import org.maplibre.geojson.Point
 fun MapScreen(
     styleUri: String,
     stops: List<StopEntity>,
+    stopsById: Map<String, StopEntity> = stops.associateBy { it.stopId },
     modifier: Modifier = Modifier,
     onLocationPermissionDenied: (() -> Unit)? = null,
     onStopSelected: ((StopEntity) -> Unit)? = null,
@@ -65,7 +66,6 @@ fun MapScreen(
     var hasLocationPermission by rememberSaveable { mutableStateOf(hasLocationPermission(context)) }
     var isLocationEnabled by remember { mutableStateOf(false) }
     var isTrackingActive by remember { mutableStateOf(false) }
-    val stopLookup = remember(stops) { stops.associateBy { it.stopId } }
     val permissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission(),
     ) { granted ->
@@ -117,7 +117,7 @@ fun MapScreen(
         mapStyle?.let { style -> updateStopSource(style, stops) }
     }
 
-    DisposableEffect(mapLibreMap, stopLookup, onStopSelected) {
+    DisposableEffect(mapLibreMap, stopsById, onStopSelected) {
         val mapInstance = mapLibreMap
         if (mapInstance == null || onStopSelected == null) {
             onDispose { }
@@ -130,7 +130,7 @@ fun MapScreen(
                 )
                 val stopId = features.firstOrNull()?.getStringProperty(STOP_ID_PROPERTY)
                 stopId?.let { id ->
-                    stopLookup[id]?.let { stop -> onStopSelected(stop) }
+                    stopsById[id]?.let { stop -> onStopSelected(stop) }
                 }
                 stopId != null
             }

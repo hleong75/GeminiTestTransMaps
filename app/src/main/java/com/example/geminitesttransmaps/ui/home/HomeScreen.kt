@@ -67,6 +67,7 @@ fun HomeScreen(
         MapScreen(
             styleUri = uiState.styleUri,
             stops = uiState.stops,
+            stopsById = uiState.stopsById,
             onStopSelected = onStopSelected,
             modifier = Modifier.fillMaxSize(),
         )

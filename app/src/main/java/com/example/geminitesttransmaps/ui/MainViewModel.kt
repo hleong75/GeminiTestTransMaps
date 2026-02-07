@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 
 data class MainUiState(
     val stops: List<StopEntity> = emptyList(),
+    val stopsById: Map<String, StopEntity> = emptyMap(),
     val searchQuery: String = "",
     val searchResults: List<StopEntity> = emptyList(),
     val isSearchActive: Boolean = false,
@@ -65,7 +66,7 @@ class MainViewModel(
     }
 
     fun setStops(stops: List<StopEntity>) {
-        _uiState.update { it.copy(stops = stops) }
+        _uiState.update { it.copy(stops = stops, stopsById = stops.associateBy { stop -> stop.stopId }) }
     }
 
     fun setMbtilesUri(uri: Uri) {
@@ -74,10 +75,14 @@ class MainViewModel(
 
     fun importGtfs(uri: Uri) {
         viewModelScope.launch {
-            val result = repository?.importGtfs(uri)
+            if (repository == null) {
+                _uiState.update { it.copy(gtfsImportStatus = ImportStatus.Failure) }
+                return@launch
+            }
+            val result = repository.importGtfs(uri)
             _uiState.update { state ->
                 state.copy(
-                    gtfsImportStatus = result?.fold(
+                    gtfsImportStatus = result.fold(
                         onSuccess = { ImportStatus.Success },
                         onFailure = { ImportStatus.Failure },
                     ),

@@ -23,6 +23,8 @@ class GtfsImporter(
     private val context: Context,
     private val dao: GtfsDao,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
+    private val batchSize: Int = DEFAULT_BATCH_SIZE,
+    private val maxGtfsHours: Int = DEFAULT_MAX_GTFS_HOURS,
 ) {
     suspend fun import(uri: Uri): Result<Unit> = withContext(ioDispatcher) {
         runCatching {
@@ -54,7 +56,7 @@ class GtfsImporter(
     private suspend fun parseStops(zipInputStream: ZipInputStream) {
         csvParser(zipInputStream).use { parser ->
             val headers = parser.headerMap.keys
-            val batch = ArrayList<StopEntity>(BATCH_SIZE)
+            val batch = ArrayList<StopEntity>(batchSize)
             for (record in parser) {
                 val stopId = record.getNonBlankOrNull(headers, "stop_id") ?: continue
                 val stopName = record.getNonBlankOrNull(headers, "stop_name") ?: continue
@@ -75,7 +77,7 @@ class GtfsImporter(
                         wheelchairBoarding = record.getNonBlankOrNull(headers, "wheelchair_boarding")?.toIntOrNull(),
                     ),
                 )
-                if (batch.size >= BATCH_SIZE) {
+                if (batch.size >= batchSize) {
                     dao.insertStops(batch)
                     batch.clear()
                 }
@@ -89,7 +91,7 @@ class GtfsImporter(
     private suspend fun parseRoutes(zipInputStream: ZipInputStream) {
         csvParser(zipInputStream).use { parser ->
             val headers = parser.headerMap.keys
-            val batch = ArrayList<RouteEntity>(BATCH_SIZE)
+            val batch = ArrayList<RouteEntity>(batchSize)
             for (record in parser) {
                 val routeId = record.getNonBlankOrNull(headers, "route_id") ?: continue
                 val routeType = record.getNonBlankOrNull(headers, "route_type")?.toIntOrNull() ?: continue
@@ -106,7 +108,7 @@ class GtfsImporter(
                         routeTextColor = record.getNonBlankOrNull(headers, "route_text_color"),
                     ),
                 )
-                if (batch.size >= BATCH_SIZE) {
+                if (batch.size >= batchSize) {
                     dao.insertRoutes(batch)
                     batch.clear()
                 }
@@ -120,7 +122,7 @@ class GtfsImporter(
     private suspend fun parseTrips(zipInputStream: ZipInputStream) {
         csvParser(zipInputStream).use { parser ->
             val headers = parser.headerMap.keys
-            val batch = ArrayList<TripEntity>(BATCH_SIZE)
+            val batch = ArrayList<TripEntity>(batchSize)
             for (record in parser) {
                 val routeId = record.getNonBlankOrNull(headers, "route_id") ?: continue
                 val serviceId = record.getNonBlankOrNull(headers, "service_id") ?: continue
@@ -139,7 +141,7 @@ class GtfsImporter(
                         bikesAllowed = record.getNonBlankOrNull(headers, "bikes_allowed")?.toIntOrNull(),
                     ),
                 )
-                if (batch.size >= BATCH_SIZE) {
+                if (batch.size >= batchSize) {
                     dao.insertTrips(batch)
                     batch.clear()
                 }
@@ -153,7 +155,7 @@ class GtfsImporter(
     private suspend fun parseStopTimes(zipInputStream: ZipInputStream) {
         csvParser(zipInputStream).use { parser ->
             val headers = parser.headerMap.keys
-            val batch = ArrayList<StopTimeEntity>(BATCH_SIZE)
+            val batch = ArrayList<StopTimeEntity>(batchSize)
             for (record in parser) {
                 val tripId = record.getNonBlankOrNull(headers, "trip_id") ?: continue
                 val stopId = record.getNonBlankOrNull(headers, "stop_id") ?: continue
@@ -173,7 +175,7 @@ class GtfsImporter(
                         shapeDistTraveled = record.getNonBlankOrNull(headers, "shape_dist_traveled")?.toDoubleOrNull(),
                     ),
                 )
-                if (batch.size >= BATCH_SIZE) {
+                if (batch.size >= batchSize) {
                     dao.insertStopTimes(batch)
                     batch.clear()
                 }
@@ -187,7 +189,7 @@ class GtfsImporter(
     private suspend fun parseCalendar(zipInputStream: ZipInputStream) {
         csvParser(zipInputStream).use { parser ->
             val headers = parser.headerMap.keys
-            val batch = ArrayList<CalendarEntity>(BATCH_SIZE)
+            val batch = ArrayList<CalendarEntity>(batchSize)
             for (record in parser) {
                 val serviceId = record.getNonBlankOrNull(headers, "service_id") ?: continue
                 val monday = record.getNonBlankOrNull(headers, "monday")?.toIntOrNull() ?: continue
@@ -213,7 +215,7 @@ class GtfsImporter(
                         endDate = endDate,
                     ),
                 )
-                if (batch.size >= BATCH_SIZE) {
+                if (batch.size >= batchSize) {
                     dao.insertCalendars(batch)
                     batch.clear()
                 }
@@ -235,7 +237,7 @@ class GtfsImporter(
         if (hours < 0) {
             return null
         }
-        if (hours > MAX_GTFS_HOURS) {
+        if (hours > maxGtfsHours) {
             return null
         }
         if (minutes !in 0..59 || seconds !in 0..59) {
@@ -267,7 +269,7 @@ class GtfsImporter(
     }
 
     companion object {
-        const val BATCH_SIZE = 500
-        const val MAX_GTFS_HOURS = 48
+        const val DEFAULT_BATCH_SIZE = 500
+        const val DEFAULT_MAX_GTFS_HOURS = 48
     }
 }

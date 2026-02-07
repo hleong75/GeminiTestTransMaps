@@ -59,16 +59,11 @@ fun MapScreen(
     var mapStyle by remember { mutableStateOf<Style?>(null) }
     val hasLocationPermission = remember { mutableStateOf(hasLocationPermission(context)) }
     var isLocationEnabled by remember { mutableStateOf(false) }
-    var isTrackingEnabled by remember { mutableStateOf(false) }
-    val markLocationEnabled = {
-        isLocationEnabled = true
-        isTrackingEnabled = true
-    }
-    val enableLocation = remember(context) {
-        { mapInstance: MapLibreMap, style: Style, setLocationEnabled: () -> Unit ->
-            if (enableUserLocation(context, mapInstance, style)) {
-                setLocationEnabled()
-            }
+    var isTrackingActive by remember { mutableStateOf(false) }
+    fun enableLocation(mapInstance: MapLibreMap, style: Style) {
+        if (enableUserLocation(context, mapInstance, style)) {
+            isLocationEnabled = true
+            isTrackingActive = true
         }
     }
     val permissionLauncher = rememberLauncherForActivityResult(
@@ -78,7 +73,7 @@ fun MapScreen(
         if (granted) {
             mapLibreMap?.let { mapInstance ->
                 mapStyle?.let { style ->
-                    enableLocation(mapInstance, style, setLocationEnabled = markLocationEnabled)
+                    enableLocation(mapInstance, style)
                 }
             }
         } else {
@@ -99,7 +94,7 @@ fun MapScreen(
             ensureStopLayer(style)
             updateStopSource(style, stops)
             if (hasLocationPermission.value) {
-                enableLocation(mapInstance, style, setLocationEnabled = markLocationEnabled)
+                enableLocation(mapInstance, style)
             }
         }
     }
@@ -131,16 +126,16 @@ fun MapScreen(
                 if (hasLocationPermission.value) {
                     mapLibreMap?.let { mapInstance ->
                         if (isLocationEnabled) {
-                            val nextMode = if (isTrackingEnabled) {
+                            val nextMode = if (isTrackingActive) {
                                 CameraMode.NONE
                             } else {
                                 CameraMode.TRACKING
                             }
                             mapInstance.locationComponent.cameraMode = nextMode
-                            isTrackingEnabled = nextMode == CameraMode.TRACKING
+                            isTrackingActive = nextMode == CameraMode.TRACKING
                         } else {
                             mapStyle?.let { style ->
-                                enableLocation(mapInstance, style, setLocationEnabled = markLocationEnabled)
+                                enableLocation(mapInstance, style)
                             }
                         }
                     }

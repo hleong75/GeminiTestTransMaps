@@ -156,16 +156,24 @@ fun MapScreen(
 }
 
 private fun ensureStopLayer(style: Style) {
-    if (style.getSource(STOP_SOURCE_ID) == null) {
-        style.addSource(GeoJsonSource(STOP_SOURCE_ID, FeatureCollection.fromFeatures(emptyList())))
+    if (style.getSource(MapScreenDefaults.STOP_SOURCE_ID) == null) {
+        style.addSource(
+            GeoJsonSource(
+                MapScreenDefaults.STOP_SOURCE_ID,
+                FeatureCollection.fromFeatures(emptyList()),
+            ),
+        )
     }
-    if (style.getLayer(STOP_LAYER_ID) == null) {
+    if (style.getLayer(MapScreenDefaults.STOP_LAYER_ID) == null) {
         style.addLayer(
-            CircleLayer(STOP_LAYER_ID, STOP_SOURCE_ID).withProperties(
-                circleColor(STOP_CIRCLE_COLOR),
-                circleRadius(STOP_CIRCLE_RADIUS),
-                circleStrokeColor(STOP_STROKE_COLOR),
-                circleStrokeWidth(STOP_STROKE_WIDTH),
+            CircleLayer(
+                MapScreenDefaults.STOP_LAYER_ID,
+                MapScreenDefaults.STOP_SOURCE_ID,
+            ).withProperties(
+                circleColor(MapScreenDefaults.STOP_CIRCLE_COLOR),
+                circleRadius(MapScreenDefaults.STOP_CIRCLE_RADIUS),
+                circleStrokeColor(MapScreenDefaults.STOP_STROKE_COLOR),
+                circleStrokeWidth(MapScreenDefaults.STOP_STROKE_WIDTH),
             ),
         )
     }
@@ -175,7 +183,7 @@ private fun updateStopSource(style: Style, stops: List<StopEntity>) {
     val features = stops.map { stop ->
         Feature.fromGeometry(Point.fromLngLat(stop.stopLon, stop.stopLat))
     }
-    style.getSourceAs<GeoJsonSource>(STOP_SOURCE_ID)
+    style.getSourceAs<GeoJsonSource>(MapScreenDefaults.STOP_SOURCE_ID)
         ?.setGeoJson(FeatureCollection.fromFeatures(features))
 }
 
@@ -230,9 +238,11 @@ private fun rememberMapViewWithLifecycle(): MapView {
     return mapView
 }
 
-private const val STOP_SOURCE_ID = "stops-source"
-private const val STOP_LAYER_ID = "stops-layer"
-private const val STOP_CIRCLE_COLOR = "#1E88E5"
-private const val STOP_STROKE_COLOR = "#FFFFFF"
-private const val STOP_CIRCLE_RADIUS = 5f
-private const val STOP_STROKE_WIDTH = 1.5f
+private object MapScreenDefaults {
+    const val STOP_SOURCE_ID = "stops-source"
+    const val STOP_LAYER_ID = "stops-layer"
+    const val STOP_CIRCLE_COLOR = "#1E88E5"
+    const val STOP_STROKE_COLOR = "#FFFFFF"
+    const val STOP_CIRCLE_RADIUS = 5f
+    const val STOP_STROKE_WIDTH = 1.5f
+}

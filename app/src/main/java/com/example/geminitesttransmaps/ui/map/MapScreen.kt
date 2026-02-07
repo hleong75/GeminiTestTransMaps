@@ -54,7 +54,7 @@ import org.maplibre.geojson.Point
 fun MapScreen(
     styleUri: String,
     stops: List<StopEntity>,
-    stopsById: Map<String, StopEntity> = stops.associateBy { it.stopId },
+    stopsById: Map<String, StopEntity>,
     modifier: Modifier = Modifier,
     onLocationPermissionDenied: (() -> Unit)? = null,
     onStopSelected: ((StopEntity) -> Unit)? = null,

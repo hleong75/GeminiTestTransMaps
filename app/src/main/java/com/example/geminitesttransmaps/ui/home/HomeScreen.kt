@@ -92,7 +92,7 @@ fun HomeScreen(
                 .padding(16.dp),
             colors = SearchBarDefaults.colors(),
         ) {
-            if (uiState.searchResults.isEmpty() && uiState.searchQuery.isNotBlank()) {
+            if (uiState.searchQuery.isNotBlank() && uiState.searchResults.isEmpty()) {
                 Text(
                     text = stringResource(id = R.string.search_no_results),
                     modifier = Modifier.padding(16.dp),

@@ -24,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
@@ -60,12 +61,6 @@ fun MapScreen(
     val hasLocationPermission = remember { mutableStateOf(hasLocationPermission(context)) }
     var isLocationEnabled by remember { mutableStateOf(false) }
     var isTrackingActive by remember { mutableStateOf(false) }
-    fun enableLocation(mapInstance: MapLibreMap, style: Style) {
-        if (enableUserLocation(context, mapInstance, style)) {
-            isLocationEnabled = true
-            isTrackingActive = true
-        }
-    }
     val permissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission(),
     ) { granted ->
@@ -73,7 +68,10 @@ fun MapScreen(
         if (granted) {
             mapLibreMap?.let { mapInstance ->
                 mapStyle?.let { style ->
-                    enableLocation(mapInstance, style)
+                    if (enableUserLocation(context, mapInstance, style)) {
+                        isLocationEnabled = true
+                        isTrackingActive = true
+                    }
                 }
             }
         } else {
@@ -94,7 +92,10 @@ fun MapScreen(
             ensureStopLayer(style)
             updateStopSource(style, stops)
             if (hasLocationPermission.value) {
-                enableLocation(mapInstance, style)
+                if (enableUserLocation(context, mapInstance, style)) {
+                    isLocationEnabled = true
+                    isTrackingActive = true
+                }
             }
         }
     }
@@ -116,7 +117,7 @@ fun MapScreen(
             shape = MaterialTheme.shapes.medium,
         ) {
             Text(
-                text = "Offline map",
+                text = stringResource(id = R.string.offline_map_label),
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
                 style = MaterialTheme.typography.titleSmall,
             )
@@ -135,7 +136,10 @@ fun MapScreen(
                             isTrackingActive = nextMode == CameraMode.TRACKING
                         } else {
                             mapStyle?.let { style ->
-                                enableLocation(mapInstance, style)
+                                if (enableUserLocation(context, mapInstance, style)) {
+                                    isLocationEnabled = true
+                                    isTrackingActive = true
+                                }
                             }
                         }
                     }
@@ -147,7 +151,10 @@ fun MapScreen(
                 .align(Alignment.BottomEnd)
                 .padding(16.dp),
         ) {
-            Text(text = "GPS", style = MaterialTheme.typography.labelLarge)
+            Text(
+                text = stringResource(id = R.string.gps_button_label),
+                style = MaterialTheme.typography.labelLarge,
+            )
         }
     }
 }

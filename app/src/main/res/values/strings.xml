@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offline_map_label">Offline map</string>
+    <string name="gps_button_label">GPS</string>
+</resources>

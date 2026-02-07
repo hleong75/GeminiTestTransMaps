@@ -55,19 +55,21 @@ fun MapScreen(
 ) {
     val context = LocalContext.current
     val mapView = rememberMapViewWithLifecycle()
-    var map by remember { mutableStateOf<MapboxMap?>(null) }
+    var mapboxMap by remember { mutableStateOf<MapboxMap?>(null) }
     var mapStyle by remember { mutableStateOf<Style?>(null) }
     val hasLocationPermission = remember { mutableStateOf(hasLocationPermission(context)) }
     var isLocationEnabled by remember { mutableStateOf(false) }
+    var isTrackingEnabled by remember { mutableStateOf(false) }
     val permissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission(),
     ) { granted ->
         hasLocationPermission.value = granted
         if (granted) {
-            map?.let { mapboxMap ->
+            mapboxMap?.let { mapInstance ->
                 mapStyle?.let { style ->
-                    if (enableUserLocation(context, mapboxMap, style)) {
+                    if (enableUserLocation(context, mapInstance, style)) {
                         isLocationEnabled = true
+                        isTrackingEnabled = true
                     }
                 }
             }
@@ -77,13 +79,13 @@ fun MapScreen(
     }
 
     LaunchedEffect(mapView) {
-        mapView.getMapAsync { mapboxMap ->
-            map = mapboxMap
+        mapView.getMapAsync { mapInstance ->
+            mapboxMap = mapInstance
         }
     }
 
-    LaunchedEffect(styleUri, map) {
-        val mapInstance = map ?: return@LaunchedEffect
+    LaunchedEffect(styleUri, mapboxMap) {
+        val mapInstance = mapboxMap ?: return@LaunchedEffect
         mapInstance.setStyle(Style.Builder().fromUri(styleUri)) { style ->
             mapStyle = style
             ensureStopLayer(style)
@@ -91,6 +93,7 @@ fun MapScreen(
             if (hasLocationPermission.value) {
                 if (enableUserLocation(context, mapInstance, style)) {
                     isLocationEnabled = true
+                    isTrackingEnabled = true
                 }
             }
         }
@@ -121,13 +124,20 @@ fun MapScreen(
         FloatingActionButton(
             onClick = {
                 if (hasLocationPermission.value) {
-                    map?.let { mapboxMap ->
+                    mapboxMap?.let { mapInstance ->
                         if (isLocationEnabled) {
-                            mapboxMap.locationComponent.cameraMode = CameraMode.TRACKING
+                            val nextMode = if (isTrackingEnabled) {
+                                CameraMode.NONE
+                            } else {
+                                CameraMode.TRACKING
+                            }
+                            mapInstance.locationComponent.cameraMode = nextMode
+                            isTrackingEnabled = nextMode == CameraMode.TRACKING
                         } else {
                             mapStyle?.let { style ->
-                                if (enableUserLocation(context, mapboxMap, style)) {
+                                if (enableUserLocation(context, mapInstance, style)) {
                                     isLocationEnabled = true
+                                    isTrackingEnabled = true
                                 }
                             }
                         }
@@ -174,9 +184,11 @@ private fun enableUserLocation(context: Context, map: MapboxMap, style: Style): 
         return false
     }
     val locationComponent = map.locationComponent
-    locationComponent.activateLocationComponent(
-        LocationComponentActivationOptions.builder(context, style).build(),
-    )
+    if (!locationComponent.isLocationComponentActivated) {
+        locationComponent.activateLocationComponent(
+            LocationComponentActivationOptions.builder(context, style).build(),
+        )
+    }
     locationComponent.isLocationComponentEnabled = true
     locationComponent.cameraMode = CameraMode.TRACKING
     locationComponent.renderMode = RenderMode.COMPASS

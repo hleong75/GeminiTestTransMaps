@@ -53,25 +53,26 @@ class GtfsImporter(
 
     private suspend fun parseStops(zipInputStream: ZipInputStream) {
         csvParser(zipInputStream).use { parser ->
+            val headers = parser.headerMap.keys
             val batch = ArrayList<StopEntity>(BATCH_SIZE)
             for (record in parser) {
-                val stopId = record.getOptional("stop_id") ?: continue
-                val stopName = record.getOptional("stop_name") ?: continue
-                val stopLat = record.getOptional("stop_lat")?.toDoubleOrNull() ?: continue
-                val stopLon = record.getOptional("stop_lon")?.toDoubleOrNull() ?: continue
+                val stopId = record.getOptional(headers, "stop_id") ?: continue
+                val stopName = record.getOptional(headers, "stop_name") ?: continue
+                val stopLat = record.getOptional(headers, "stop_lat")?.toDoubleOrNull() ?: continue
+                val stopLon = record.getOptional(headers, "stop_lon")?.toDoubleOrNull() ?: continue
                 batch.add(
                     StopEntity(
                         stopId = stopId,
-                        stopCode = record.getOptional("stop_code"),
+                        stopCode = record.getOptional(headers, "stop_code"),
                         stopName = stopName,
-                        stopDesc = record.getOptional("stop_desc"),
+                        stopDesc = record.getOptional(headers, "stop_desc"),
                         stopLat = stopLat,
                         stopLon = stopLon,
-                        zoneId = record.getOptional("zone_id"),
-                        stopUrl = record.getOptional("stop_url"),
-                        locationType = record.getOptional("location_type")?.toIntOrNull(),
-                        parentStation = record.getOptional("parent_station"),
-                        wheelchairBoarding = record.getOptional("wheelchair_boarding")?.toIntOrNull(),
+                        zoneId = record.getOptional(headers, "zone_id"),
+                        stopUrl = record.getOptional(headers, "stop_url"),
+                        locationType = record.getOptional(headers, "location_type")?.toIntOrNull(),
+                        parentStation = record.getOptional(headers, "parent_station"),
+                        wheelchairBoarding = record.getOptional(headers, "wheelchair_boarding")?.toIntOrNull(),
                     ),
                 )
                 if (batch.size >= BATCH_SIZE) {
@@ -87,21 +88,22 @@ class GtfsImporter(
 
     private suspend fun parseRoutes(zipInputStream: ZipInputStream) {
         csvParser(zipInputStream).use { parser ->
+            val headers = parser.headerMap.keys
             val batch = ArrayList<RouteEntity>(BATCH_SIZE)
             for (record in parser) {
-                val routeId = record.getOptional("route_id") ?: continue
-                val routeType = record.getOptional("route_type")?.toIntOrNull() ?: continue
+                val routeId = record.getOptional(headers, "route_id") ?: continue
+                val routeType = record.getOptional(headers, "route_type")?.toIntOrNull() ?: continue
                 batch.add(
                     RouteEntity(
                         routeId = routeId,
-                        agencyId = record.getOptional("agency_id"),
-                        routeShortName = record.getOptional("route_short_name"),
-                        routeLongName = record.getOptional("route_long_name"),
-                        routeDesc = record.getOptional("route_desc"),
+                        agencyId = record.getOptional(headers, "agency_id"),
+                        routeShortName = record.getOptional(headers, "route_short_name"),
+                        routeLongName = record.getOptional(headers, "route_long_name"),
+                        routeDesc = record.getOptional(headers, "route_desc"),
                         routeType = routeType,
-                        routeUrl = record.getOptional("route_url"),
-                        routeColor = record.getOptional("route_color"),
-                        routeTextColor = record.getOptional("route_text_color"),
+                        routeUrl = record.getOptional(headers, "route_url"),
+                        routeColor = record.getOptional(headers, "route_color"),
+                        routeTextColor = record.getOptional(headers, "route_text_color"),
                     ),
                 )
                 if (batch.size >= BATCH_SIZE) {
@@ -117,23 +119,24 @@ class GtfsImporter(
 
     private suspend fun parseTrips(zipInputStream: ZipInputStream) {
         csvParser(zipInputStream).use { parser ->
+            val headers = parser.headerMap.keys
             val batch = ArrayList<TripEntity>(BATCH_SIZE)
             for (record in parser) {
-                val routeId = record.getOptional("route_id") ?: continue
-                val serviceId = record.getOptional("service_id") ?: continue
-                val tripId = record.getOptional("trip_id") ?: continue
+                val routeId = record.getOptional(headers, "route_id") ?: continue
+                val serviceId = record.getOptional(headers, "service_id") ?: continue
+                val tripId = record.getOptional(headers, "trip_id") ?: continue
                 batch.add(
                     TripEntity(
                         tripId = tripId,
                         routeId = routeId,
                         serviceId = serviceId,
-                        tripHeadsign = record.getOptional("trip_headsign"),
-                        tripShortName = record.getOptional("trip_short_name"),
-                        directionId = record.getOptional("direction_id")?.toIntOrNull(),
-                        blockId = record.getOptional("block_id"),
-                        shapeId = record.getOptional("shape_id"),
-                        wheelchairAccessible = record.getOptional("wheelchair_accessible")?.toIntOrNull(),
-                        bikesAllowed = record.getOptional("bikes_allowed")?.toIntOrNull(),
+                        tripHeadsign = record.getOptional(headers, "trip_headsign"),
+                        tripShortName = record.getOptional(headers, "trip_short_name"),
+                        directionId = record.getOptional(headers, "direction_id")?.toIntOrNull(),
+                        blockId = record.getOptional(headers, "block_id"),
+                        shapeId = record.getOptional(headers, "shape_id"),
+                        wheelchairAccessible = record.getOptional(headers, "wheelchair_accessible")?.toIntOrNull(),
+                        bikesAllowed = record.getOptional(headers, "bikes_allowed")?.toIntOrNull(),
                     ),
                 )
                 if (batch.size >= BATCH_SIZE) {
@@ -149,13 +152,14 @@ class GtfsImporter(
 
     private suspend fun parseStopTimes(zipInputStream: ZipInputStream) {
         csvParser(zipInputStream).use { parser ->
+            val headers = parser.headerMap.keys
             val batch = ArrayList<StopTimeEntity>(BATCH_SIZE)
             for (record in parser) {
-                val tripId = record.getOptional("trip_id") ?: continue
-                val stopId = record.getOptional("stop_id") ?: continue
-                val stopSequence = record.getOptional("stop_sequence")?.toIntOrNull() ?: continue
-                val arrivalTimeSec = parseTimeToSeconds(record.getOptional("arrival_time")) ?: continue
-                val departureTimeSec = parseTimeToSeconds(record.getOptional("departure_time")) ?: continue
+                val tripId = record.getOptional(headers, "trip_id") ?: continue
+                val stopId = record.getOptional(headers, "stop_id") ?: continue
+                val stopSequence = record.getOptional(headers, "stop_sequence")?.toIntOrNull() ?: continue
+                val arrivalTimeSec = parseTimeToSeconds(record.getOptional(headers, "arrival_time")) ?: continue
+                val departureTimeSec = parseTimeToSeconds(record.getOptional(headers, "departure_time")) ?: continue
                 batch.add(
                     StopTimeEntity(
                         tripId = tripId,
@@ -163,10 +167,10 @@ class GtfsImporter(
                         departureTimeSec = departureTimeSec,
                         stopId = stopId,
                         stopSequence = stopSequence,
-                        stopHeadsign = record.getOptional("stop_headsign"),
-                        pickupType = record.getOptional("pickup_type")?.toIntOrNull(),
-                        dropOffType = record.getOptional("drop_off_type")?.toIntOrNull(),
-                        shapeDistTraveled = record.getOptional("shape_dist_traveled")?.toDoubleOrNull(),
+                        stopHeadsign = record.getOptional(headers, "stop_headsign"),
+                        pickupType = record.getOptional(headers, "pickup_type")?.toIntOrNull(),
+                        dropOffType = record.getOptional(headers, "drop_off_type")?.toIntOrNull(),
+                        shapeDistTraveled = record.getOptional(headers, "shape_dist_traveled")?.toDoubleOrNull(),
                     ),
                 )
                 if (batch.size >= BATCH_SIZE) {
@@ -182,18 +186,19 @@ class GtfsImporter(
 
     private suspend fun parseCalendar(zipInputStream: ZipInputStream) {
         csvParser(zipInputStream).use { parser ->
+            val headers = parser.headerMap.keys
             val batch = ArrayList<CalendarEntity>(BATCH_SIZE)
             for (record in parser) {
-                val serviceId = record.getOptional("service_id") ?: continue
-                val monday = record.getOptional("monday")?.toIntOrNull() ?: continue
-                val tuesday = record.getOptional("tuesday")?.toIntOrNull() ?: continue
-                val wednesday = record.getOptional("wednesday")?.toIntOrNull() ?: continue
-                val thursday = record.getOptional("thursday")?.toIntOrNull() ?: continue
-                val friday = record.getOptional("friday")?.toIntOrNull() ?: continue
-                val saturday = record.getOptional("saturday")?.toIntOrNull() ?: continue
-                val sunday = record.getOptional("sunday")?.toIntOrNull() ?: continue
-                val startDate = record.getOptional("start_date") ?: continue
-                val endDate = record.getOptional("end_date") ?: continue
+                val serviceId = record.getOptional(headers, "service_id") ?: continue
+                val monday = record.getOptional(headers, "monday")?.toIntOrNull() ?: continue
+                val tuesday = record.getOptional(headers, "tuesday")?.toIntOrNull() ?: continue
+                val wednesday = record.getOptional(headers, "wednesday")?.toIntOrNull() ?: continue
+                val thursday = record.getOptional(headers, "thursday")?.toIntOrNull() ?: continue
+                val friday = record.getOptional(headers, "friday")?.toIntOrNull() ?: continue
+                val saturday = record.getOptional(headers, "saturday")?.toIntOrNull() ?: continue
+                val sunday = record.getOptional(headers, "sunday")?.toIntOrNull() ?: continue
+                val startDate = record.getOptional(headers, "start_date") ?: continue
+                val endDate = record.getOptional(headers, "end_date") ?: continue
                 batch.add(
                     CalendarEntity(
                         serviceId = serviceId,
@@ -248,8 +253,8 @@ class GtfsImporter(
         }
     }
 
-    private fun CSVRecord.getOptional(column: String): String? {
-        if (!isMapped(column) || !isSet(column)) {
+    private fun CSVRecord.getOptional(headers: Set<String>, column: String): String? {
+        if (!headers.contains(column) || !isSet(column)) {
             return null
         }
         return get(column).takeIf { it.isNotBlank() }

@@ -36,6 +36,21 @@ interface GtfsDao {
         limit: Int = DEFAULT_STOP_TIMES_LIMIT,
     ): List<StopTimeEntity>
 
+    @Query(
+        """
+        SELECT * FROM stop_times
+        WHERE stop_id = :stopId
+        AND trip_id IN (:tripIds)
+        """,
+    )
+    suspend fun getStopTimesForTripsAtStop(
+        stopId: String,
+        tripIds: List<String>,
+    ): List<StopTimeEntity>
+
+    @Query("SELECT * FROM trips WHERE trip_id IN (:tripIds)")
+    suspend fun getTripsByIds(tripIds: List<String>): List<TripEntity>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertStops(stops: List<StopEntity>)
 

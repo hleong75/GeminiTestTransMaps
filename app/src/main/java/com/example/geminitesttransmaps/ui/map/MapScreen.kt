@@ -3,6 +3,7 @@ package com.example.geminitesttransmaps.ui.map
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
+import android.os.Bundle
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Box
@@ -82,13 +83,13 @@ fun MapScreen(
     }
 
     LaunchedEffect(styleUri, map) {
-        map?.setStyle(Style.Builder().fromUri(styleUri)) { style ->
+        val mapInstance = map ?: return@LaunchedEffect
+        mapInstance.setStyle(Style.Builder().fromUri(styleUri)) { style ->
             mapStyle = style
             ensureStopLayer(style)
             updateStopSource(style, stops)
             if (hasLocationPermission.value) {
-                val mapboxMap = map ?: return@setStyle
-                if (enableUserLocation(context, mapboxMap, style)) {
+                if (enableUserLocation(context, mapInstance, style)) {
                     isLocationEnabled = true
                 }
             }
@@ -112,7 +113,7 @@ fun MapScreen(
             shape = MaterialTheme.shapes.medium,
         ) {
             Text(
-                text = "Carte hors-ligne",
+                text = "Offline map",
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
                 style = MaterialTheme.typography.titleSmall,
             )
@@ -194,7 +195,7 @@ private fun rememberMapViewWithLifecycle(): MapView {
     val context = LocalContext.current
     val mapView = remember {
         MapView(context).apply {
-            onCreate(null)
+            onCreate(Bundle())
         }
     }
     val lifecycle = LocalLifecycleOwner.current.lifecycle

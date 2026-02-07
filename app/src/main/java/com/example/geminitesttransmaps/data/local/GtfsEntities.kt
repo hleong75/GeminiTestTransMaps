@@ -8,7 +8,8 @@ import androidx.room.PrimaryKey
 @Entity(
     tableName = "stops",
     indices = [
-        Index(value = ["stop_lat", "stop_lon"]),
+        Index(value = ["stop_lat"]),
+        Index(value = ["stop_lon"]),
     ],
 )
 data class StopEntity(
@@ -96,7 +97,6 @@ data class TripEntity(
     primaryKeys = ["trip_id", "stop_sequence"],
     indices = [
         Index(value = ["stop_id", "arrival_time_sec"]),
-        Index(value = ["stop_id"]),
         Index(value = ["arrival_time_sec"]),
     ],
 )

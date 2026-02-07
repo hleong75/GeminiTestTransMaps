@@ -36,7 +36,6 @@ import com.example.geminitesttransmaps.data.local.StopEntity
 import org.maplibre.android.location.LocationComponentActivationOptions
 import org.maplibre.android.location.modes.CameraMode
 import org.maplibre.android.location.modes.RenderMode
-import org.maplibre.android.maps.MapboxMap
 import org.maplibre.android.maps.MapView
 import org.maplibre.android.maps.MapboxMap as MapLibreMap
 import org.maplibre.android.maps.Style
@@ -122,7 +121,7 @@ fun MapScreen(
         if (mapInstance == null || onStopSelected == null) {
             onDispose { }
         } else {
-            val listener = MapboxMap.OnMapClickListener { latLng ->
+            val listener = MapLibreMap.OnMapClickListener { latLng ->
                 val screenPoint: PointF = mapInstance.projection.toScreenLocation(latLng)
                 val features = mapInstance.queryRenderedFeatures(
                     screenPoint,

@@ -5,7 +5,5 @@
 
     <application
         android:label="GeminiTestTransMaps"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar">
-        <activity android:name="androidx.activity.ComponentActivity" />
-    </application>
+        android:theme="@android:style/Theme.Material.Light.NoActionBar" />
 </manifest>

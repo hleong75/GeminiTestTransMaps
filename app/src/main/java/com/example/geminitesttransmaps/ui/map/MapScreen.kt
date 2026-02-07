@@ -54,7 +54,7 @@ fun MapScreen(
 ) {
     val context = LocalContext.current
     val mapView = rememberMapViewWithLifecycle()
-    var mapLibreMap by remember { mutableStateOf<MapboxMap?>(null) }
+    var map by remember { mutableStateOf<MapboxMap?>(null) }
     var mapStyle by remember { mutableStateOf<Style?>(null) }
     val hasLocationPermission = remember { mutableStateOf(hasLocationPermission(context)) }
     var isLocationEnabled by remember { mutableStateOf(false) }
@@ -63,9 +63,9 @@ fun MapScreen(
     ) { granted ->
         hasLocationPermission.value = granted
         if (granted) {
-            mapLibreMap?.let { map ->
+            map?.let { mapboxMap ->
                 mapStyle?.let { style ->
-                    if (enableUserLocation(context, map, style)) {
+                    if (enableUserLocation(context, mapboxMap, style)) {
                         isLocationEnabled = true
                     }
                 }
@@ -76,19 +76,19 @@ fun MapScreen(
     }
 
     LaunchedEffect(mapView) {
-        mapView.getMapAsync { map ->
-            mapLibreMap = map
+        mapView.getMapAsync { mapboxMap ->
+            map = mapboxMap
         }
     }
 
-    LaunchedEffect(styleUri, mapLibreMap) {
-        mapLibreMap?.setStyle(Style.Builder().fromUri(styleUri)) { style ->
+    LaunchedEffect(styleUri, map) {
+        map?.setStyle(Style.Builder().fromUri(styleUri)) { style ->
             mapStyle = style
             ensureStopLayer(style)
             updateStopSource(style, stops)
             if (hasLocationPermission.value) {
-                val map = mapLibreMap ?: return@setStyle
-                if (enableUserLocation(context, map, style)) {
+                val mapboxMap = map ?: return@setStyle
+                if (enableUserLocation(context, mapboxMap, style)) {
                     isLocationEnabled = true
                 }
             }
@@ -120,12 +120,12 @@ fun MapScreen(
         FloatingActionButton(
             onClick = {
                 if (hasLocationPermission.value) {
-                    mapLibreMap?.let { map ->
+                    map?.let { mapboxMap ->
                         if (isLocationEnabled) {
-                            map.locationComponent.cameraMode = CameraMode.TRACKING
+                            mapboxMap.locationComponent.cameraMode = CameraMode.TRACKING
                         } else {
                             mapStyle?.let { style ->
-                                if (enableUserLocation(context, map, style)) {
+                                if (enableUserLocation(context, mapboxMap, style)) {
                                     isLocationEnabled = true
                                 }
                             }

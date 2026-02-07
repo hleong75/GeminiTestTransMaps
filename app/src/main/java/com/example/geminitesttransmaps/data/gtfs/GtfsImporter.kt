@@ -58,23 +58,23 @@ class GtfsImporter(
             val headers = parser.headerMap.keys
             val batch = ArrayList<StopEntity>(batchSize)
             for (record in parser) {
-                val stopId = record.getNonBlankOrNull(headers, "stop_id") ?: continue
-                val stopName = record.getNonBlankOrNull(headers, "stop_name") ?: continue
-                val stopLat = record.getNonBlankOrNull(headers, "stop_lat")?.toDoubleOrNull() ?: continue
-                val stopLon = record.getNonBlankOrNull(headers, "stop_lon")?.toDoubleOrNull() ?: continue
+                val stopId = record.getFieldOrNull(headers, "stop_id") ?: continue
+                val stopName = record.getFieldOrNull(headers, "stop_name") ?: continue
+                val stopLat = record.getFieldOrNull(headers, "stop_lat")?.toDoubleOrNull() ?: continue
+                val stopLon = record.getFieldOrNull(headers, "stop_lon")?.toDoubleOrNull() ?: continue
                 batch.add(
                     StopEntity(
                         stopId = stopId,
-                        stopCode = record.getNonBlankOrNull(headers, "stop_code"),
+                        stopCode = record.getFieldOrNull(headers, "stop_code"),
                         stopName = stopName,
-                        stopDesc = record.getNonBlankOrNull(headers, "stop_desc"),
+                        stopDesc = record.getFieldOrNull(headers, "stop_desc"),
                         stopLat = stopLat,
                         stopLon = stopLon,
-                        zoneId = record.getNonBlankOrNull(headers, "zone_id"),
-                        stopUrl = record.getNonBlankOrNull(headers, "stop_url"),
-                        locationType = record.getNonBlankOrNull(headers, "location_type")?.toIntOrNull(),
-                        parentStation = record.getNonBlankOrNull(headers, "parent_station"),
-                        wheelchairBoarding = record.getNonBlankOrNull(headers, "wheelchair_boarding")?.toIntOrNull(),
+                        zoneId = record.getFieldOrNull(headers, "zone_id"),
+                        stopUrl = record.getFieldOrNull(headers, "stop_url"),
+                        locationType = record.getFieldOrNull(headers, "location_type")?.toIntOrNull(),
+                        parentStation = record.getFieldOrNull(headers, "parent_station"),
+                        wheelchairBoarding = record.getFieldOrNull(headers, "wheelchair_boarding")?.toIntOrNull(),
                     ),
                 )
                 if (batch.size >= batchSize) {
@@ -93,19 +93,19 @@ class GtfsImporter(
             val headers = parser.headerMap.keys
             val batch = ArrayList<RouteEntity>(batchSize)
             for (record in parser) {
-                val routeId = record.getNonBlankOrNull(headers, "route_id") ?: continue
-                val routeType = record.getNonBlankOrNull(headers, "route_type")?.toIntOrNull() ?: continue
+                val routeId = record.getFieldOrNull(headers, "route_id") ?: continue
+                val routeType = record.getFieldOrNull(headers, "route_type")?.toIntOrNull() ?: continue
                 batch.add(
                     RouteEntity(
                         routeId = routeId,
-                        agencyId = record.getNonBlankOrNull(headers, "agency_id"),
-                        routeShortName = record.getNonBlankOrNull(headers, "route_short_name"),
-                        routeLongName = record.getNonBlankOrNull(headers, "route_long_name"),
-                        routeDesc = record.getNonBlankOrNull(headers, "route_desc"),
+                        agencyId = record.getFieldOrNull(headers, "agency_id"),
+                        routeShortName = record.getFieldOrNull(headers, "route_short_name"),
+                        routeLongName = record.getFieldOrNull(headers, "route_long_name"),
+                        routeDesc = record.getFieldOrNull(headers, "route_desc"),
                         routeType = routeType,
-                        routeUrl = record.getNonBlankOrNull(headers, "route_url"),
-                        routeColor = record.getNonBlankOrNull(headers, "route_color"),
-                        routeTextColor = record.getNonBlankOrNull(headers, "route_text_color"),
+                        routeUrl = record.getFieldOrNull(headers, "route_url"),
+                        routeColor = record.getFieldOrNull(headers, "route_color"),
+                        routeTextColor = record.getFieldOrNull(headers, "route_text_color"),
                     ),
                 )
                 if (batch.size >= batchSize) {
@@ -124,21 +124,21 @@ class GtfsImporter(
             val headers = parser.headerMap.keys
             val batch = ArrayList<TripEntity>(batchSize)
             for (record in parser) {
-                val routeId = record.getNonBlankOrNull(headers, "route_id") ?: continue
-                val serviceId = record.getNonBlankOrNull(headers, "service_id") ?: continue
-                val tripId = record.getNonBlankOrNull(headers, "trip_id") ?: continue
+                val routeId = record.getFieldOrNull(headers, "route_id") ?: continue
+                val serviceId = record.getFieldOrNull(headers, "service_id") ?: continue
+                val tripId = record.getFieldOrNull(headers, "trip_id") ?: continue
                 batch.add(
                     TripEntity(
                         tripId = tripId,
                         routeId = routeId,
                         serviceId = serviceId,
-                        tripHeadsign = record.getNonBlankOrNull(headers, "trip_headsign"),
-                        tripShortName = record.getNonBlankOrNull(headers, "trip_short_name"),
-                        directionId = record.getNonBlankOrNull(headers, "direction_id")?.toIntOrNull(),
-                        blockId = record.getNonBlankOrNull(headers, "block_id"),
-                        shapeId = record.getNonBlankOrNull(headers, "shape_id"),
-                        wheelchairAccessible = record.getNonBlankOrNull(headers, "wheelchair_accessible")?.toIntOrNull(),
-                        bikesAllowed = record.getNonBlankOrNull(headers, "bikes_allowed")?.toIntOrNull(),
+                        tripHeadsign = record.getFieldOrNull(headers, "trip_headsign"),
+                        tripShortName = record.getFieldOrNull(headers, "trip_short_name"),
+                        directionId = record.getFieldOrNull(headers, "direction_id")?.toIntOrNull(),
+                        blockId = record.getFieldOrNull(headers, "block_id"),
+                        shapeId = record.getFieldOrNull(headers, "shape_id"),
+                        wheelchairAccessible = record.getFieldOrNull(headers, "wheelchair_accessible")?.toIntOrNull(),
+                        bikesAllowed = record.getFieldOrNull(headers, "bikes_allowed")?.toIntOrNull(),
                     ),
                 )
                 if (batch.size >= batchSize) {
@@ -157,11 +157,11 @@ class GtfsImporter(
             val headers = parser.headerMap.keys
             val batch = ArrayList<StopTimeEntity>(batchSize)
             for (record in parser) {
-                val tripId = record.getNonBlankOrNull(headers, "trip_id") ?: continue
-                val stopId = record.getNonBlankOrNull(headers, "stop_id") ?: continue
-                val stopSequence = record.getNonBlankOrNull(headers, "stop_sequence")?.toIntOrNull() ?: continue
-                val arrivalTimeSec = parseTimeToSeconds(record.getNonBlankOrNull(headers, "arrival_time")) ?: continue
-                val departureTimeSec = parseTimeToSeconds(record.getNonBlankOrNull(headers, "departure_time")) ?: continue
+                val tripId = record.getFieldOrNull(headers, "trip_id") ?: continue
+                val stopId = record.getFieldOrNull(headers, "stop_id") ?: continue
+                val stopSequence = record.getFieldOrNull(headers, "stop_sequence")?.toIntOrNull() ?: continue
+                val arrivalTimeSec = parseTimeToSeconds(record.getFieldOrNull(headers, "arrival_time")) ?: continue
+                val departureTimeSec = parseTimeToSeconds(record.getFieldOrNull(headers, "departure_time")) ?: continue
                 batch.add(
                     StopTimeEntity(
                         tripId = tripId,
@@ -169,10 +169,10 @@ class GtfsImporter(
                         departureTimeSec = departureTimeSec,
                         stopId = stopId,
                         stopSequence = stopSequence,
-                        stopHeadsign = record.getNonBlankOrNull(headers, "stop_headsign"),
-                        pickupType = record.getNonBlankOrNull(headers, "pickup_type")?.toIntOrNull(),
-                        dropOffType = record.getNonBlankOrNull(headers, "drop_off_type")?.toIntOrNull(),
-                        shapeDistTraveled = record.getNonBlankOrNull(headers, "shape_dist_traveled")?.toDoubleOrNull(),
+                        stopHeadsign = record.getFieldOrNull(headers, "stop_headsign"),
+                        pickupType = record.getFieldOrNull(headers, "pickup_type")?.toIntOrNull(),
+                        dropOffType = record.getFieldOrNull(headers, "drop_off_type")?.toIntOrNull(),
+                        shapeDistTraveled = record.getFieldOrNull(headers, "shape_dist_traveled")?.toDoubleOrNull(),
                     ),
                 )
                 if (batch.size >= batchSize) {
@@ -191,16 +191,16 @@ class GtfsImporter(
             val headers = parser.headerMap.keys
             val batch = ArrayList<CalendarEntity>(batchSize)
             for (record in parser) {
-                val serviceId = record.getNonBlankOrNull(headers, "service_id") ?: continue
-                val monday = record.getNonBlankOrNull(headers, "monday")?.toIntOrNull() ?: continue
-                val tuesday = record.getNonBlankOrNull(headers, "tuesday")?.toIntOrNull() ?: continue
-                val wednesday = record.getNonBlankOrNull(headers, "wednesday")?.toIntOrNull() ?: continue
-                val thursday = record.getNonBlankOrNull(headers, "thursday")?.toIntOrNull() ?: continue
-                val friday = record.getNonBlankOrNull(headers, "friday")?.toIntOrNull() ?: continue
-                val saturday = record.getNonBlankOrNull(headers, "saturday")?.toIntOrNull() ?: continue
-                val sunday = record.getNonBlankOrNull(headers, "sunday")?.toIntOrNull() ?: continue
-                val startDate = record.getNonBlankOrNull(headers, "start_date") ?: continue
-                val endDate = record.getNonBlankOrNull(headers, "end_date") ?: continue
+                val serviceId = record.getFieldOrNull(headers, "service_id") ?: continue
+                val monday = record.getFieldOrNull(headers, "monday")?.toIntOrNull() ?: continue
+                val tuesday = record.getFieldOrNull(headers, "tuesday")?.toIntOrNull() ?: continue
+                val wednesday = record.getFieldOrNull(headers, "wednesday")?.toIntOrNull() ?: continue
+                val thursday = record.getFieldOrNull(headers, "thursday")?.toIntOrNull() ?: continue
+                val friday = record.getFieldOrNull(headers, "friday")?.toIntOrNull() ?: continue
+                val saturday = record.getFieldOrNull(headers, "saturday")?.toIntOrNull() ?: continue
+                val sunday = record.getFieldOrNull(headers, "sunday")?.toIntOrNull() ?: continue
+                val startDate = record.getFieldOrNull(headers, "start_date") ?: continue
+                val endDate = record.getFieldOrNull(headers, "end_date") ?: continue
                 batch.add(
                     CalendarEntity(
                         serviceId = serviceId,
@@ -258,7 +258,7 @@ class GtfsImporter(
         }
     }
 
-    private fun CSVRecord.getNonBlankOrNull(headers: Set<String>, column: String): String? {
+    private fun CSVRecord.getFieldOrNull(headers: Set<String>, column: String): String? {
         if (!headers.contains(column) || !isSet(column)) {
             return null
         }

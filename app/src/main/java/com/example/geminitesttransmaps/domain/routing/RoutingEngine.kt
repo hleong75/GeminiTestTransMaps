@@ -31,7 +31,7 @@ class RoutingEngine(
         if (startStopTimes.isEmpty()) {
             return emptyList()
         }
-        val tripIds = startStopTimes.distinctBy { it.tripId }.map { it.tripId }
+        val tripIds = startStopTimes.map { it.tripId }.distinct()
         val endStopTimes = loadStopTimesForTrips(endStopId, tripIds)
         if (endStopTimes.isEmpty()) {
             return emptyList()
@@ -67,6 +67,7 @@ class RoutingEngine(
     companion object {
         const val DEFAULT_MAX_STOP_TIMES = 1000
         const val DEFAULT_RESULT_LIMIT = 100
+        // SQLite has a default bind parameter limit (999), keep some headroom for safety.
         private const val MAX_TRIP_ID_CHUNK = 900
     }
 

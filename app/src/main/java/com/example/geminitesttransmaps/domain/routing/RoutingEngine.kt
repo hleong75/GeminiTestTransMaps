@@ -29,7 +29,11 @@ class RoutingEngine(
         if (startStopTimes.isEmpty()) {
             return emptyList()
         }
-        val tripIds = startStopTimes.map { it.tripId }.distinct()
+        val filteredStartStopTimes = startStopTimes.filter { it.departureTimeSec >= departureTimeSec }
+        if (filteredStartStopTimes.isEmpty()) {
+            return emptyList()
+        }
+        val tripIds = filteredStartStopTimes.map { it.tripId }.distinct()
         val endStopTimes = dao.getStopTimesForTripsAtStop(
             stopId = endStopId,
             tripIds = tripIds,
@@ -38,19 +42,20 @@ class RoutingEngine(
             return emptyList()
         }
         val tripsById = dao.getTripsByIds(tripIds).associateBy { it.tripId }
-        val startTimesByTrip = startStopTimes
-            .groupBy { it.tripId }
-            .mapValues { (_, times) -> times.minByOrNull { it.departureTimeSec } }
-        val endTimesByTrip = endStopTimes
-            .groupBy { it.tripId }
-            .mapValues { (_, times) -> times.minByOrNull { it.arrivalTimeSec } }
+        val startTimesByTrip = filteredStartStopTimes.groupBy { it.tripId }
+        val endTimesByTrip = endStopTimes.groupBy { it.tripId }
         return tripIds.mapNotNull { tripId ->
             val trip = tripsById[tripId] ?: return@mapNotNull null
-            val startTime = startTimesByTrip[tripId] ?: return@mapNotNull null
-            val endTime = endTimesByTrip[tripId] ?: return@mapNotNull null
-            if (endTime.arrivalTimeSec <= startTime.departureTimeSec) {
-                return@mapNotNull null
-            }
+            val startTime = startTimesByTrip[tripId]
+                ?.minByOrNull { it.departureTimeSec }
+                ?: return@mapNotNull null
+            val endTime = endTimesByTrip[tripId]
+                ?.filter {
+                    it.stopSequence > startTime.stopSequence &&
+                        it.arrivalTimeSec >= startTime.departureTimeSec
+                }
+                ?.minByOrNull { it.arrivalTimeSec }
+                ?: return@mapNotNull null
             DirectTrip(
                 trip = trip,
                 departureTimeSec = startTime.departureTimeSec,

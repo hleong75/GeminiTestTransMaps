@@ -29,7 +29,6 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import com.example.geminitesttransmaps.data.local.StopEntity
-import org.maplibre.android.camera.CameraPosition
 import org.maplibre.android.location.LocationComponentActivationOptions
 import org.maplibre.android.location.modes.CameraMode
 import org.maplibre.android.location.modes.RenderMode
@@ -55,16 +54,21 @@ fun MapScreen(
 ) {
     val context = LocalContext.current
     val mapView = rememberMapViewWithLifecycle()
-    var mapboxMap by remember { mutableStateOf<MapboxMap?>(null) }
+    var mapLibreMap by remember { mutableStateOf<MapboxMap?>(null) }
     var mapStyle by remember { mutableStateOf<Style?>(null) }
     val hasLocationPermission = remember { mutableStateOf(hasLocationPermission(context)) }
+    var isLocationEnabled by remember { mutableStateOf(false) }
     val permissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission(),
     ) { granted ->
         hasLocationPermission.value = granted
         if (granted) {
-            mapboxMap?.let { map ->
-                mapStyle?.let { style -> enableUserLocation(context, map, style) }
+            mapLibreMap?.let { map ->
+                mapStyle?.let { style ->
+                    if (enableUserLocation(context, map, style)) {
+                        isLocationEnabled = true
+                    }
+                }
             }
         } else {
             onLocationPermissionDenied?.invoke()
@@ -73,17 +77,20 @@ fun MapScreen(
 
     LaunchedEffect(mapView) {
         mapView.getMapAsync { map ->
-            mapboxMap = map
+            mapLibreMap = map
         }
     }
 
-    LaunchedEffect(styleUri, mapboxMap) {
-        mapboxMap?.setStyle(Style.Builder().fromUri(styleUri)) { style ->
+    LaunchedEffect(styleUri, mapLibreMap) {
+        mapLibreMap?.setStyle(Style.Builder().fromUri(styleUri)) { style ->
             mapStyle = style
             ensureStopLayer(style)
             updateStopSource(style, stops)
             if (hasLocationPermission.value) {
-                enableUserLocation(context, mapboxMap ?: return@setStyle, style)
+                val map = mapLibreMap ?: return@setStyle
+                if (enableUserLocation(context, map, style)) {
+                    isLocationEnabled = true
+                }
             }
         }
     }
@@ -113,8 +120,16 @@ fun MapScreen(
         FloatingActionButton(
             onClick = {
                 if (hasLocationPermission.value) {
-                    mapboxMap?.let { map ->
-                        mapStyle?.let { style -> enableUserLocation(context, map, style) }
+                    mapLibreMap?.let { map ->
+                        if (isLocationEnabled) {
+                            map.locationComponent.cameraMode = CameraMode.TRACKING
+                        } else {
+                            mapStyle?.let { style ->
+                                if (enableUserLocation(context, map, style)) {
+                                    isLocationEnabled = true
+                                }
+                            }
+                        }
                     }
                 } else {
                     permissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
@@ -153,20 +168,18 @@ private fun updateStopSource(style: Style, stops: List<StopEntity>) {
         ?.setGeoJson(FeatureCollection.fromFeatures(features))
 }
 
-private fun enableUserLocation(context: Context, mapboxMap: MapboxMap, style: Style) {
+private fun enableUserLocation(context: Context, map: MapboxMap, style: Style): Boolean {
     if (!hasLocationPermission(context)) {
-        return
+        return false
     }
-    val locationComponent = mapboxMap.locationComponent
+    val locationComponent = map.locationComponent
     locationComponent.activateLocationComponent(
         LocationComponentActivationOptions.builder(context, style).build(),
     )
     locationComponent.isLocationComponentEnabled = true
     locationComponent.cameraMode = CameraMode.TRACKING
     locationComponent.renderMode = RenderMode.COMPASS
-    mapboxMap.cameraPosition = CameraPosition.Builder()
-        .zoom(14.0)
-        .build()
+    return true
 }
 
 private fun hasLocationPermission(context: Context): Boolean {

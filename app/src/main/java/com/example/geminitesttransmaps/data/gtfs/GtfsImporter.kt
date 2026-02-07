@@ -267,6 +267,6 @@ class GtfsImporter(
 
     companion object {
         const val DEFAULT_BATCH_SIZE = 500
-        const val DEFAULT_MAX_GTFS_HOURS = 24 * 2
+        const val DEFAULT_MAX_GTFS_HOURS = (24 * 2) - 1
     }
 }

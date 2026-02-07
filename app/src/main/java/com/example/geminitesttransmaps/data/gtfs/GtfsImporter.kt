@@ -15,8 +15,8 @@ import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVParser
 import org.apache.commons.csv.CSVRecord
 import java.io.BufferedInputStream
+import java.io.FilterInputStream
 import java.io.InputStreamReader
-import java.io.Reader
 import java.util.zip.ZipInputStream
 
 class GtfsImporter(
@@ -232,7 +232,10 @@ class GtfsImporter(
         val hours = parts[0].toIntOrNull() ?: return null
         val minutes = parts[1].toIntOrNull() ?: return null
         val seconds = parts[2].toIntOrNull() ?: return null
-        if (hours < 0 || minutes !in 0..59 || seconds !in 0..59) {
+        if (hours < 0) {
+            return null
+        }
+        if (minutes !in 0..59 || seconds !in 0..59) {
             return null
         }
         return (hours * 3600) + (minutes * 60) + seconds
@@ -240,13 +243,13 @@ class GtfsImporter(
 
     private fun csvParser(zipInputStream: ZipInputStream): CSVParser {
         return CSVParser(
-            nonClosingReader(zipInputStream),
+            InputStreamReader(nonClosingInputStream(zipInputStream), Charsets.UTF_8),
             CSVFormat.DEFAULT.withFirstRecordAsHeader().withTrim(),
         )
     }
 
-    private fun nonClosingReader(zipInputStream: ZipInputStream): Reader {
-        return object : InputStreamReader(zipInputStream, Charsets.UTF_8) {
+    private fun nonClosingInputStream(zipInputStream: ZipInputStream): FilterInputStream {
+        return object : FilterInputStream(zipInputStream) {
             override fun close() {
                 // No-op to keep ZipInputStream open for subsequent entries.
             }

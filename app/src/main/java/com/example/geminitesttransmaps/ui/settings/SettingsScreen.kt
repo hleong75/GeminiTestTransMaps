@@ -38,11 +38,7 @@ fun SettingsScreen(
     val mbtilesLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent(),
     ) { uri ->
-        uri?.let { selection ->
-            if (selection.toString().lowercase().endsWith(".mbtiles")) {
-                onImportMbtiles(selection)
-            }
-        }
+        uri?.let(onImportMbtiles)
     }
 
     Scaffold(

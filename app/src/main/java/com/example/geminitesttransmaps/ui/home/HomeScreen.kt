@@ -11,7 +11,6 @@ import androidx.compose.material3.ListItem
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.SearchBar
 import androidx.compose.material3.SearchBarDefaults
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
@@ -108,22 +107,5 @@ fun HomeScreen(
                 }
             }
         }
-        if (!uiState.isSearchActive) {
-            Surface(
-                modifier = Modifier
-                    .align(Alignment.TopCenter)
-                    .padding(top = searchBarOverlayPadding),
-                tonalElevation = 4.dp,
-                shape = SearchBarDefaults.inputFieldShape,
-            ) {
-                Text(
-                    text = stringResource(id = R.string.offline_map_label),
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
-                )
-            }
-        }
     }
 }
-
-// Aligns the floating label beneath the SearchBar's default height + top padding.
-private val searchBarOverlayPadding = 84.dp

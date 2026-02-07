@@ -18,6 +18,7 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
@@ -116,7 +117,8 @@ fun MapScreen(
         mapStyle?.let { style -> updateStopSource(style, stops) }
     }
 
-    DisposableEffect(mapLibreMap, stopsById, onStopSelected) {
+    val currentStopsById by rememberUpdatedState(stopsById)
+    DisposableEffect(mapLibreMap, onStopSelected) {
         val mapInstance = mapLibreMap
         if (mapInstance == null || onStopSelected == null) {
             onDispose { }
@@ -128,7 +130,7 @@ fun MapScreen(
                     MapScreenDefaults.STOP_LAYER_ID,
                 )
                 val stopId = features.firstOrNull()?.getStringProperty(STOP_ID_PROPERTY)
-                val stop = stopId?.let { id -> stopsById[id] }
+                val stop = stopId?.let { id -> currentStopsById[id] }
                 if (stop != null) {
                     onStopSelected(stop)
                 }

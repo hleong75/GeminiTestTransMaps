@@ -40,10 +40,13 @@ class MainViewModel(
             val results = if (query.isBlank()) {
                 emptyList()
             } else {
-                state.stops.filter { stop ->
-                    stop.stopName.contains(query, ignoreCase = true) ||
-                        stop.stopId.contains(query, ignoreCase = true)
-                }
+                state.stops.asSequence()
+                    .filter { stop ->
+                        stop.stopName.contains(query, ignoreCase = true) ||
+                            stop.stopId.contains(query, ignoreCase = true)
+                    }
+                    .take(MAX_SEARCH_RESULTS)
+                    .toList()
             }
             state.copy(searchQuery = query, searchResults = results)
         }
@@ -98,5 +101,6 @@ class MainViewModel(
 
     companion object {
         const val DEFAULT_STYLE_URI = "asset://style.json"
+        private const val MAX_SEARCH_RESULTS = 50
     }
 }

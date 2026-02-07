@@ -55,10 +55,10 @@ class GtfsImporter(
         csvParser(zipInputStream).use { parser ->
             val batch = ArrayList<StopEntity>(BATCH_SIZE)
             for (record in parser) {
-                val stopId = record.getRequired("stop_id") ?: continue
-                val stopName = record.getRequired("stop_name") ?: continue
-                val stopLat = record.getRequired("stop_lat")?.toDoubleOrNull() ?: continue
-                val stopLon = record.getRequired("stop_lon")?.toDoubleOrNull() ?: continue
+                val stopId = record.getValue("stop_id") ?: continue
+                val stopName = record.getValue("stop_name") ?: continue
+                val stopLat = record.getValue("stop_lat")?.toDoubleOrNull() ?: continue
+                val stopLon = record.getValue("stop_lon")?.toDoubleOrNull() ?: continue
                 batch.add(
                     StopEntity(
                         stopId = stopId,
@@ -89,8 +89,8 @@ class GtfsImporter(
         csvParser(zipInputStream).use { parser ->
             val batch = ArrayList<RouteEntity>(BATCH_SIZE)
             for (record in parser) {
-                val routeId = record.getRequired("route_id") ?: continue
-                val routeType = record.getRequired("route_type")?.toIntOrNull() ?: continue
+                val routeId = record.getValue("route_id") ?: continue
+                val routeType = record.getValue("route_type")?.toIntOrNull() ?: continue
                 batch.add(
                     RouteEntity(
                         routeId = routeId,
@@ -119,9 +119,9 @@ class GtfsImporter(
         csvParser(zipInputStream).use { parser ->
             val batch = ArrayList<TripEntity>(BATCH_SIZE)
             for (record in parser) {
-                val routeId = record.getRequired("route_id") ?: continue
-                val serviceId = record.getRequired("service_id") ?: continue
-                val tripId = record.getRequired("trip_id") ?: continue
+                val routeId = record.getValue("route_id") ?: continue
+                val serviceId = record.getValue("service_id") ?: continue
+                val tripId = record.getValue("trip_id") ?: continue
                 batch.add(
                     TripEntity(
                         tripId = tripId,
@@ -151,11 +151,11 @@ class GtfsImporter(
         csvParser(zipInputStream).use { parser ->
             val batch = ArrayList<StopTimeEntity>(BATCH_SIZE)
             for (record in parser) {
-                val tripId = record.getRequired("trip_id") ?: continue
-                val stopId = record.getRequired("stop_id") ?: continue
-                val stopSequence = record.getRequired("stop_sequence")?.toIntOrNull() ?: continue
-                val arrivalTimeSec = parseTimeToSeconds(record.getRequired("arrival_time")) ?: continue
-                val departureTimeSec = parseTimeToSeconds(record.getRequired("departure_time")) ?: continue
+                val tripId = record.getValue("trip_id") ?: continue
+                val stopId = record.getValue("stop_id") ?: continue
+                val stopSequence = record.getValue("stop_sequence")?.toIntOrNull() ?: continue
+                val arrivalTimeSec = parseTimeToSeconds(record.getValue("arrival_time")) ?: continue
+                val departureTimeSec = parseTimeToSeconds(record.getValue("departure_time")) ?: continue
                 batch.add(
                     StopTimeEntity(
                         tripId = tripId,
@@ -184,16 +184,16 @@ class GtfsImporter(
         csvParser(zipInputStream).use { parser ->
             val batch = ArrayList<CalendarEntity>(BATCH_SIZE)
             for (record in parser) {
-                val serviceId = record.getRequired("service_id") ?: continue
-                val monday = record.getRequired("monday")?.toIntOrNull() ?: continue
-                val tuesday = record.getRequired("tuesday")?.toIntOrNull() ?: continue
-                val wednesday = record.getRequired("wednesday")?.toIntOrNull() ?: continue
-                val thursday = record.getRequired("thursday")?.toIntOrNull() ?: continue
-                val friday = record.getRequired("friday")?.toIntOrNull() ?: continue
-                val saturday = record.getRequired("saturday")?.toIntOrNull() ?: continue
-                val sunday = record.getRequired("sunday")?.toIntOrNull() ?: continue
-                val startDate = record.getRequired("start_date") ?: continue
-                val endDate = record.getRequired("end_date") ?: continue
+                val serviceId = record.getValue("service_id") ?: continue
+                val monday = record.getValue("monday")?.toIntOrNull() ?: continue
+                val tuesday = record.getValue("tuesday")?.toIntOrNull() ?: continue
+                val wednesday = record.getValue("wednesday")?.toIntOrNull() ?: continue
+                val thursday = record.getValue("thursday")?.toIntOrNull() ?: continue
+                val friday = record.getValue("friday")?.toIntOrNull() ?: continue
+                val saturday = record.getValue("saturday")?.toIntOrNull() ?: continue
+                val sunday = record.getValue("sunday")?.toIntOrNull() ?: continue
+                val startDate = record.getValue("start_date") ?: continue
+                val endDate = record.getValue("end_date") ?: continue
                 batch.add(
                     CalendarEntity(
                         serviceId = serviceId,
@@ -227,6 +227,9 @@ class GtfsImporter(
         val hours = parts[0].toIntOrNull() ?: return null
         val minutes = parts[1].toIntOrNull() ?: return null
         val seconds = parts[2].toIntOrNull() ?: return null
+        if (hours < 0 || minutes !in 0..59 || seconds !in 0..59) {
+            return null
+        }
         return (hours * 3600) + (minutes * 60) + seconds
     }
 
@@ -245,7 +248,7 @@ class GtfsImporter(
         }
     }
 
-    private fun CSVRecord.getRequired(column: String): String? {
+    private fun CSVRecord.getValue(column: String): String? {
         return getOptional(column)
     }
 

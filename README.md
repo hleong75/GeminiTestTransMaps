@@ -16,3 +16,14 @@ Clone open-source de l'application Transito, conçu pour Android natif en Kotlin
 - Base de données : Room (SQLite) pour stocker et requêter le GTFS.
 - Injection de dépendance : Hilt.
 - Asynchrone : Coroutines & Flow.
+
+## Structure de dossiers proposée (Clean Architecture)
+
+```
+app/
+  src/main/java/<package>/
+    data/
+    domain/
+    ui/
+    di/
+```

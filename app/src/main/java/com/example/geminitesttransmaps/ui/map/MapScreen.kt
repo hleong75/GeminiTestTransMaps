@@ -3,6 +3,7 @@ package com.example.geminitesttransmaps.ui.map
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.PointF
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -11,8 +12,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -37,6 +36,7 @@ import com.example.geminitesttransmaps.data.local.StopEntity
 import org.maplibre.android.location.LocationComponentActivationOptions
 import org.maplibre.android.location.modes.CameraMode
 import org.maplibre.android.location.modes.RenderMode
+import org.maplibre.android.maps.MapboxMap
 import org.maplibre.android.maps.MapView
 import org.maplibre.android.maps.MapboxMap as MapLibreMap
 import org.maplibre.android.maps.Style
@@ -56,6 +56,7 @@ fun MapScreen(
     stops: List<StopEntity>,
     modifier: Modifier = Modifier,
     onLocationPermissionDenied: (() -> Unit)? = null,
+    onStopSelected: ((StopEntity) -> Unit)? = null,
 ) {
     val context = LocalContext.current
     val mapView = rememberMapViewWithLifecycle()
@@ -64,6 +65,7 @@ fun MapScreen(
     var hasLocationPermission by rememberSaveable { mutableStateOf(hasLocationPermission(context)) }
     var isLocationEnabled by remember { mutableStateOf(false) }
     var isTrackingActive by remember { mutableStateOf(false) }
+    val stopLookup = remember(stops) { stops.associateBy { it.stopId } }
     val permissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission(),
     ) { granted ->
@@ -115,24 +117,35 @@ fun MapScreen(
         mapStyle?.let { style -> updateStopSource(style, stops) }
     }
 
+    DisposableEffect(mapLibreMap, stopLookup, onStopSelected) {
+        val mapInstance = mapLibreMap
+        if (mapInstance == null || onStopSelected == null) {
+            onDispose { }
+        } else {
+            val listener = MapboxMap.OnMapClickListener { latLng ->
+                val screenPoint: PointF = mapInstance.projection.toScreenLocation(latLng)
+                val features = mapInstance.queryRenderedFeatures(
+                    screenPoint,
+                    MapScreenDefaults.STOP_LAYER_ID,
+                )
+                val stopId = features.firstOrNull()?.getStringProperty(STOP_ID_PROPERTY)
+                stopId?.let { id ->
+                    stopLookup[id]?.let { stop -> onStopSelected(stop) }
+                }
+                stopId != null
+            }
+            mapInstance.addOnMapClickListener(listener)
+            onDispose {
+                mapInstance.removeOnMapClickListener(listener)
+            }
+        }
+    }
+
     Box(modifier = modifier.fillMaxSize()) {
         AndroidView(
             factory = { mapView },
             modifier = Modifier.fillMaxSize(),
         )
-        Surface(
-            modifier = Modifier
-                .align(Alignment.TopCenter)
-                .padding(top = 16.dp),
-            tonalElevation = 4.dp,
-            shape = MaterialTheme.shapes.medium,
-        ) {
-            Text(
-                text = stringResource(id = R.string.offline_map_label),
-                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
-                style = MaterialTheme.typography.titleSmall,
-            )
-        }
         FloatingActionButton(
             onClick = {
                 if (hasLocationPermission) {
@@ -196,7 +209,10 @@ private fun ensureStopLayer(style: Style) {
 
 private fun updateStopSource(style: Style, stops: List<StopEntity>) {
     val features = stops.map { stop ->
-        Feature.fromGeometry(Point.fromLngLat(stop.stopLon, stop.stopLat))
+        Feature.fromGeometry(Point.fromLngLat(stop.stopLon, stop.stopLat)).apply {
+            addStringProperty(STOP_ID_PROPERTY, stop.stopId)
+            addStringProperty(STOP_NAME_PROPERTY, stop.stopName)
+        }
     }
     style.getSourceAs<GeoJsonSource>(MapScreenDefaults.STOP_SOURCE_ID)
         ?.setGeoJson(FeatureCollection.fromFeatures(features))
@@ -263,3 +279,5 @@ private object MapScreenDefaults {
 }
 
 private const val MAP_LOG_TAG = "MapScreen"
+private const val STOP_ID_PROPERTY = "stop_id"
+private const val STOP_NAME_PROPERTY = "stop_name"

@@ -1,6 +1,7 @@
 package com.example.geminitesttransmaps.domain.routing
 
 import com.example.geminitesttransmaps.data.local.GtfsDao
+import com.example.geminitesttransmaps.data.local.StopTimeEntity
 import com.example.geminitesttransmaps.data.local.TripEntity
 
 data class DirectTrip(
@@ -29,20 +30,16 @@ class RoutingEngine(
         if (startStopTimes.isEmpty()) {
             return emptyList()
         }
-        val filteredStartStopTimes = startStopTimes.filter { it.departureTimeSec >= departureTimeSec }
-        if (filteredStartStopTimes.isEmpty()) {
+        val tripIds = startStopTimes.map { it.tripId }.distinct()
+        if (tripIds.isEmpty()) {
             return emptyList()
         }
-        val tripIds = filteredStartStopTimes.map { it.tripId }.distinct()
-        val endStopTimes = dao.getStopTimesForTripsAtStop(
-            stopId = endStopId,
-            tripIds = tripIds,
-        )
+        val endStopTimes = loadStopTimesForTrips(endStopId, tripIds)
         if (endStopTimes.isEmpty()) {
             return emptyList()
         }
-        val tripsById = dao.getTripsByIds(tripIds).associateBy { it.tripId }
-        val startTimesByTrip = filteredStartStopTimes.groupBy { it.tripId }
+        val tripsById = loadTripsByIds(tripIds).associateBy { it.tripId }
+        val startTimesByTrip = startStopTimes.groupBy { it.tripId }
         val endTimesByTrip = endStopTimes.groupBy { it.tripId }
         return tripIds.mapNotNull { tripId ->
             val trip = tripsById[tripId] ?: return@mapNotNull null
@@ -66,5 +63,21 @@ class RoutingEngine(
 
     companion object {
         const val DEFAULT_MAX_CONNECTIONS = 1000
+        private const val MAX_TRIP_ID_CHUNK = 900
+    }
+
+    private suspend fun loadStopTimesForTrips(
+        stopId: String,
+        tripIds: List<String>,
+    ): List<StopTimeEntity> {
+        return tripIds.chunked(MAX_TRIP_ID_CHUNK).flatMap { chunk ->
+            dao.getStopTimesForTripsAtStop(stopId, chunk)
+        }
+    }
+
+    private suspend fun loadTripsByIds(tripIds: List<String>): List<TripEntity> {
+        return tripIds.chunked(MAX_TRIP_ID_CHUNK).flatMap { chunk ->
+            dao.getTripsByIds(chunk)
+        }
     }
 }

@@ -30,9 +30,6 @@ class RoutingEngine(
             return emptyList()
         }
         val tripIds = startStopTimes.map { it.tripId }.distinct()
-        if (tripIds.isEmpty()) {
-            return emptyList()
-        }
         val endStopTimes = dao.getStopTimesForTripsAtStop(
             stopId = endStopId,
             tripIds = tripIds,
@@ -51,7 +48,7 @@ class RoutingEngine(
             val trip = tripsById[tripId] ?: return@mapNotNull null
             val startTime = startTimesByTrip[tripId] ?: return@mapNotNull null
             val endTime = endTimesByTrip[tripId] ?: return@mapNotNull null
-            if (endTime.arrivalTimeSec < startTime.departureTimeSec) {
+            if (endTime.arrivalTimeSec <= startTime.departureTimeSec) {
                 return@mapNotNull null
             }
             DirectTrip(

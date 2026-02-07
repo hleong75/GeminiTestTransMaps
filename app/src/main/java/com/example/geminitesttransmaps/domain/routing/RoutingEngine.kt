@@ -31,7 +31,7 @@ class RoutingEngine(
         if (startStopTimes.isEmpty()) {
             return emptyList()
         }
-        val tripIds = startStopTimes.mapTo(LinkedHashSet()) { it.tripId }.toList()
+        val tripIds = startStopTimes.distinctBy { it.tripId }.map { it.tripId }
         val endStopTimes = loadStopTimesForTrips(endStopId, tripIds)
         if (endStopTimes.isEmpty()) {
             return emptyList()
@@ -66,7 +66,7 @@ class RoutingEngine(
 
     companion object {
         const val DEFAULT_MAX_STOP_TIMES = 1000
-        const val DEFAULT_RESULT_LIMIT = Int.MAX_VALUE
+        const val DEFAULT_RESULT_LIMIT = 100
         private const val MAX_TRIP_ID_CHUNK = 900
     }
 

@@ -18,6 +18,7 @@ class RoutingEngine(
         startStopId: String,
         endStopId: String,
         departureTimeSec: Int,
+        resultLimit: Int = DEFAULT_RESULT_LIMIT,
     ): List<DirectTrip> {
         if (startStopId == endStopId) {
             return emptyList()
@@ -30,7 +31,7 @@ class RoutingEngine(
         if (startStopTimes.isEmpty()) {
             return emptyList()
         }
-        val tripIds = startStopTimes.map { it.tripId }.toSet().toList()
+        val tripIds = startStopTimes.mapTo(LinkedHashSet()) { it.tripId }.toList()
         val endStopTimes = loadStopTimesForTrips(endStopId, tripIds)
         if (endStopTimes.isEmpty()) {
             return emptyList()
@@ -60,10 +61,12 @@ class RoutingEngine(
                 arrivalTimeSec = endTime.arrivalTimeSec,
             )
         }.sortedBy { it.arrivalTimeSec }
+            .take(resultLimit)
     }
 
     companion object {
         const val DEFAULT_MAX_STOP_TIMES = 1000
+        const val DEFAULT_RESULT_LIMIT = Int.MAX_VALUE
         private const val MAX_TRIP_ID_CHUNK = 900
     }
 

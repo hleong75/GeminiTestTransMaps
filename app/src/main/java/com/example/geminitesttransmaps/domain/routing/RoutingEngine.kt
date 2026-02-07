@@ -12,7 +12,7 @@ data class DirectTrip(
 
 class RoutingEngine(
     private val dao: GtfsDao,
-    private val maxConnections: Int = DEFAULT_MAX_CONNECTIONS,
+    private val maxStopTimes: Int = DEFAULT_MAX_STOP_TIMES,
 ) {
     suspend fun findDirectTrips(
         startStopId: String,
@@ -25,15 +25,12 @@ class RoutingEngine(
         val startStopTimes = dao.getStopTimesForStopAtTime(
             stopId = startStopId,
             timeSec = departureTimeSec,
-            limit = maxConnections,
+            limit = maxStopTimes,
         )
         if (startStopTimes.isEmpty()) {
             return emptyList()
         }
         val tripIds = startStopTimes.map { it.tripId }.distinct()
-        if (tripIds.isEmpty()) {
-            return emptyList()
-        }
         val endStopTimes = loadStopTimesForTrips(endStopId, tripIds)
         if (endStopTimes.isEmpty()) {
             return emptyList()
@@ -62,7 +59,7 @@ class RoutingEngine(
     }
 
     companion object {
-        const val DEFAULT_MAX_CONNECTIONS = 1000
+        const val DEFAULT_MAX_STOP_TIMES = 1000
         private const val MAX_TRIP_ID_CHUNK = 900
     }
 

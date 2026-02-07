@@ -41,7 +41,10 @@ class RoutingEngine(
         return tripIds.mapNotNull { tripId ->
             val trip = tripsById[tripId] ?: return@mapNotNull null
             val startTime = startTimesByTrip[tripId]
-                ?.minByOrNull { it.departureTimeSec }
+                ?.minWithOrNull(
+                    compareBy<StopTimeEntity> { it.departureTimeSec }
+                        .thenBy { it.stopSequence },
+                )
                 ?: return@mapNotNull null
             val endTime = endTimesByTrip[tripId]
                 ?.filter {

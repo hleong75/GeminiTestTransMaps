@@ -112,7 +112,7 @@ fun HomeScreen(
             Surface(
                 modifier = Modifier
                     .align(Alignment.TopCenter)
-                    .padding(top = SEARCH_BAR_OVERLAY_PADDING),
+                    .padding(top = searchBarOverlayPadding),
                 tonalElevation = 4.dp,
                 shape = SearchBarDefaults.inputFieldShape,
             ) {
@@ -125,4 +125,4 @@ fun HomeScreen(
     }
 }
 
-private val SEARCH_BAR_OVERLAY_PADDING = 84.dp
+private val searchBarOverlayPadding = 84.dp

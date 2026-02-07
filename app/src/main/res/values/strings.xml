@@ -4,10 +4,10 @@
     <string name="gps_button_label">GPS</string>
     <string name="search_placeholder">Search a stop or destination</string>
     <string name="search_no_results">No results</string>
-    <string name="search_icon_placeholder">🔍</string>
-    <string name="settings_icon_placeholder">⚙</string>
+    <string name="search_icon_cd">Search</string>
+    <string name="settings_icon_cd">Settings</string>
     <string name="settings_title">Settings</string>
-    <string name="back_button_label">Back</string>
+    <string name="back_button_cd">Back</string>
     <string name="import_gtfs_button">Import GTFS (zip)</string>
     <string name="import_mbtiles_button">Import MBTiles</string>
     <string name="import_status_success">GTFS import complete</string>

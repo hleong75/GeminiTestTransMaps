@@ -129,10 +129,11 @@ fun MapScreen(
                     MapScreenDefaults.STOP_LAYER_ID,
                 )
                 val stopId = features.firstOrNull()?.getStringProperty(STOP_ID_PROPERTY)
-                stopId?.let { id ->
-                    stopsById[id]?.let { stop -> onStopSelected(stop) }
+                val stop = stopId?.let { id -> stopsById[id] }
+                if (stop != null) {
+                    onStopSelected(stop)
                 }
-                stopId != null
+                stop != null
             }
             mapInstance.addOnMapClickListener(listener)
             onDispose {

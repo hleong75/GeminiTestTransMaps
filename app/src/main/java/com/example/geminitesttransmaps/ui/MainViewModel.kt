@@ -66,7 +66,12 @@ class MainViewModel(
     }
 
     fun setStops(stops: List<StopEntity>) {
-        _uiState.update { it.copy(stops = stops, stopsById = stops.associateBy { stop -> stop.stopId }) }
+        _uiState.update { state ->
+            state.copy(
+                stops = stops,
+                stopsById = stops.associateBy { entity -> entity.stopId },
+            )
+        }
     }
 
     fun setMbtilesUri(uri: Uri) {

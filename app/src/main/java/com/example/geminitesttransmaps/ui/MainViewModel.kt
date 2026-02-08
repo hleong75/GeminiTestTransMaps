@@ -11,6 +11,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+private const val DEFAULT_STYLE_URI = "asset://style.json"
+
 data class MainUiState(
     val stops: List<StopEntity> = emptyList(),
     val stopsById: Map<String, StopEntity> = emptyMap(),
@@ -100,7 +102,6 @@ class MainViewModel(
     }
 
     companion object {
-        const val DEFAULT_STYLE_URI = "asset://style.json"
         private const val MAX_SEARCH_RESULTS = 50
     }
 }

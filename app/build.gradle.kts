@@ -62,6 +62,8 @@ dependencies {
 
     implementation(libs.maplibre.android.sdk)
     implementation(libs.maplibre.android.sdk.geojson)
+    implementation("org.maplibre.gl:android-sdk:10.0.2")
+    implementation("org.maplibre.gl:android-sdk-geojson:5.9.0")
 
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)

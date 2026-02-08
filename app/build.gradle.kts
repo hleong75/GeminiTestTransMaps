@@ -5,6 +5,11 @@ plugins {
     alias(libs.plugins.hilt)
 }
 
+repositories {
+    google()
+    mavenCentral()
+}
+
 android {
     namespace = "com.example.geminitesttransmaps"
     compileSdk = 35

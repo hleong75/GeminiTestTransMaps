@@ -1,0 +1,130 @@
+Executing tasks: [:app:assembleDebug] in project C:\Users\LAPTO\AndroidStudioProjects\GeminiGTFS
+
+Starting Gradle Daemon...
+Gradle Daemon started in 5 s 666 ms
+Calculating task graph as no cached configuration is available for tasks: :app:assembleDebug
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :app:generateDebugResValues
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:generateDebugResources
+> Task :app:mapDebugSourceSetPaths
+> Task :app:checkDebugAarMetadata
+> Task :app:javaPreCompileDebug
+> Task :app:extractDeepLinksDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:packageDebugResources
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
+> Task :app:desugarDebugFileDependencies
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:parseDebugLocalResources
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeDebugJniLibFolders
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:checkDebugDuplicateClasses
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:mergeLibDexDebug
+> Task :app:mergeDebugNativeLibs
+> Task :app:mergeDebugResources
+> Task :app:mergeExtDexDebug
+> Task :app:stripDebugDebugSymbols
+> Task :app:processDebugResources
+
+> Task :app:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libmapbox-gl.so.
+
+> Task :app:kspDebugKotlin
+> Task :app:compileDebugKotlin
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:38:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:39:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:40:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:41:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:42:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:43:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:44:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:45:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:46:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:47:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:48:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:49:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:50:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:51:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:52:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:65:24 Property delegate must have a 'getValue(Nothing?, KProperty<*>)' method. None of the following functions is suitable: 
+public inline operator fun <T> State<Nothing?>.getValue(thisObj: Any?, property: KProperty<*>): Nothing? defined in androidx.compose.runtime
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:65:24 Property delegate must have a 'setValue(Nothing?, KProperty<*>, [Error type: Error delegation type for remember { mutableStateOf<MapLibreMap?>(null) }])' method. None of the following functions is suitable: 
+public inline operator fun <T> MutableState<Nothing?>.setValue(thisObj: Any?, property: KProperty<*>, value: Nothing?): Unit defined in androidx.compose.runtime
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:65:50 Unresolved reference: MapLibreMap
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:66:21 Property delegate must have a 'getValue(Nothing?, KProperty<*>)' method. None of the following functions is suitable: 
+public inline operator fun <T> State<Nothing?>.getValue(thisObj: Any?, property: KProperty<*>): Nothing? defined in androidx.compose.runtime
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:66:21 Property delegate must have a 'setValue(Nothing?, KProperty<*>, [Error type: Error delegation type for remember { mutableStateOf<Style?>(null) }])' method. None of the following functions is suitable: 
+public inline operator fun <T> MutableState<Nothing?>.setValue(thisObj: Any?, property: KProperty<*>, value: Nothing?): Unit defined in androidx.compose.runtime
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:66:47 Unresolved reference: Style
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:75:32 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:76:33 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:89:31 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:101:25 Unresolved reference: setStyle
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:101:34 Unresolved reference: Style
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:101:71 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:118:25 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:127:28 Unresolved reference: MapLibreMap
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:127:61 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:134:42 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:155:40 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:158:33 Unresolved reference: CameraMode
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:160:33 Unresolved reference: CameraMode
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:162:59 Variable expected
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:163:60 Unresolved reference: CameraMode
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:165:45 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:189:36 Unresolved reference: Style
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:192:13 Unresolved reference: GeoJsonSource
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:194:17 Unresolved reference: FeatureCollection
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:200:13 Unresolved reference: CircleLayer
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:204:17 Unresolved reference: circleColor
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:205:17 Unresolved reference: circleRadius
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:206:17 Unresolved reference: circleStrokeColor
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:207:17 Unresolved reference: circleStrokeWidth
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:213:37 Unresolved reference: Style
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:215:9 Unresolved reference: Feature
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:215:30 Unresolved reference: Point
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:216:13 Unresolved reference: addStringProperty
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:217:13 Unresolved reference: addStringProperty
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:220:23 Unresolved reference: GeoJsonSource
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:221:22 Unresolved reference: FeatureCollection
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:224:55 Unresolved reference: MapLibreMap
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:224:75 Unresolved reference: Style
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:231:13 Unresolved reference: LocationComponentActivationOptions
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:234:23 Variable expected
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:235:23 Variable expected
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:235:36 Unresolved reference: CameraMode
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:236:23 Variable expected
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:236:36 Unresolved reference: RenderMode
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:248:45 Unresolved reference: MapView
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:251:9 Unresolved reference: MapView
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:252:13 Unresolved reference: onCreate
+
+> Task :app:compileDebugKotlin FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 8m 40s
+30 actionable tasks: 30 executed
+Configuration cache entry stored.

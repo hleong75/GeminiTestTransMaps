@@ -1,174 +1,8 @@
 Executing tasks: [:app:assembleDebug] in project C:\Users\LAPTO\AndroidStudioProjects\GeminiGTFS
 
+Starting Gradle Daemon...
+Gradle Daemon started in 5 s 666 ms
 Calculating task graph as no cached configuration is available for tasks: :app:assembleDebug
-AGPBI: {"kind":"warning","text":"We recommend using a newer Android Gradle plugin to use compileSdk = 35\n\nThis Android Gradle plugin (8.3.2) was tested up to compileSdk = 34.\n\nYou are strongly encouraged to update your project to use a newer\nAndroid Gradle plugin that has been tested with compileSdk = 35.\n\nIf you are already using the latest version of the Android Gradle plugin,\nyou may need to wait until a newer version with support for compileSdk = 35 is available.\n\nTo suppress this warning, add/update\n    android.suppressUnsupportedCompileSdk=35\nto this project's gradle.properties.","sources":[{}]}
-Download https://repo.maven.apache.org/maven2/org/maplibre/gl/android-sdk/10.0.2/android-sdk-10.0.2.aar, took 26 s 759 ms
-Download https://repo.maven.apache.org/maven2/com/mapbox/mapboxsdk/mapbox-android-gestures/0.7.0/mapbox-android-gestures-0.7.0.aar, took 49 ms
-Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-common/2.7.7/navigation-common-2.7.7.aar, took 917 ms
-Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-runtime/2.7.7/navigation-runtime-2.7.7.aar, took 497 ms
-Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-common-ktx/2.7.7/navigation-common-ktx-2.7.7.aar, took 361 ms
-Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-runtime-ktx/2.7.7/navigation-runtime-ktx-2.7.7.aar, took 349 ms
-Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-compose/2.7.7/navigation-compose-2.7.7.aar, took 1 s 753 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.2.0/material3-android-1.2.0.aar, took 3 s 672 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/hilt-android/2.50/hilt-android-2.50.aar, took 80 ms
-Download https://dl.google.com/dl/android/maven2/androidx/fragment/fragment/1.5.5/fragment-1.5.5.aar, took 577 ms
-Download https://dl.google.com/dl/android/maven2/androidx/savedstate/savedstate-ktx/1.2.1/savedstate-ktx-1.2.1.aar, took 317 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-ripple-android/1.6.2/material-ripple-android-1.6.2.aar, took 626 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-core-android/1.6.2/material-icons-core-android-1.6.2.aar, took 1 s 105 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-extended-android/1.6.2/material-icons-extended-android-1.6.2.aar, took 24 s 644 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-android/1.6.2/material-android-1.6.2.aar, took 5 s 301 ms
-Download https://dl.google.com/dl/android/maven2/androidx/savedstate/savedstate/1.2.1/savedstate-1.2.1.aar, took 287 ms
-Download https://dl.google.com/dl/android/maven2/androidx/loader/loader/1.0.0/loader-1.0.0.aar, took 417 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-core-android/1.6.2/animation-core-android-1.6.2.aar, took 2 s 126 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-android/1.6.2/animation-android-1.6.2.aar, took 2 s 222 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-layout-android/1.6.2/foundation-layout-android-1.6.2.aar, took 3 s 152 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-android/1.6.2/foundation-android-1.6.2.aar, took 13 s 624 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-data-android/1.6.2/ui-tooling-data-android-1.6.2.aar, took 800 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-unit-android/1.6.2/ui-unit-android-1.6.2.aar, took 1 s
-Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-geometry-android/1.6.2/ui-geometry-android-1.6.2.aar, took 608 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-util-android/1.6.2/ui-util-android-1.6.2.aar, took 461 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-graphics-android/1.6.2/ui-graphics-android-1.6.2.aar, took 2 s 459 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-preview-android/1.6.2/ui-tooling-preview-android-1.6.2.aar, took 550 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-text-android/1.6.2/ui-text-android-1.6.2.aar, took 1 s 971 ms
-Download https://dl.google.com/dl/android/maven2/androidx/emoji2/emoji2/1.3.0/emoji2-1.3.0.aar, took 383 ms
-Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-process/2.7.0/lifecycle-process-2.7.0.aar, took 372 ms
-Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core-ktx/2.7.0/lifecycle-livedata-core-ktx-2.7.0.aar, took 291 ms
-Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata/2.7.0/lifecycle-livedata-2.7.0.aar, took 327 ms
-Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core/2.7.0/lifecycle-livedata-core-2.7.0.aar, took 387 ms
-Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-savedstate/2.7.0/lifecycle-viewmodel-savedstate-2.7.0.aar, took 586 ms
-Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-ktx/2.7.0/lifecycle-viewmodel-ktx-2.7.0.aar, took 310 ms
-Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel/2.7.0/lifecycle-viewmodel-2.7.0.aar, took 319 ms
-Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime/2.7.0/lifecycle-runtime-2.7.0.aar, took 348 ms
-Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime-ktx/2.7.0/lifecycle-runtime-ktx-2.7.0.aar, took 411 ms
-Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-compose/2.7.0/lifecycle-viewmodel-compose-2.7.0.aar, took 352 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.6.2/ui-android-1.6.2.aar, took 4 s 394 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-android/1.6.2/ui-tooling-android-1.6.2.aar, took 1 s 411 ms
-Download https://dl.google.com/dl/android/maven2/androidx/activity/activity-compose/1.8.2/activity-compose-1.8.2.aar, took 1 s 259 ms
-Download https://dl.google.com/dl/android/maven2/androidx/activity/activity-ktx/1.8.2/activity-ktx-1.8.2.aar, took 310 ms
-Download https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.8.2/activity-1.8.2.aar, took 420 ms
-Download https://dl.google.com/dl/android/maven2/androidx/viewpager/viewpager/1.0.0/viewpager-1.0.0.aar, took 443 ms
-Download https://dl.google.com/dl/android/maven2/androidx/autofill/autofill/1.0.0/autofill-1.0.0.aar, took 297 ms
-Download https://dl.google.com/dl/android/maven2/androidx/customview/customview/1.0.0/customview-1.0.0.aar, took 325 ms
-Download https://dl.google.com/dl/android/maven2/androidx/core/core/1.12.0/core-1.12.0.aar, took 1 s 53 ms
-Download https://dl.google.com/dl/android/maven2/androidx/customview/customview-poolingcontainer/1.0.0/customview-poolingcontainer-1.0.0.aar, took 278 ms
-Download https://dl.google.com/dl/android/maven2/androidx/core/core-ktx/1.12.0/core-ktx-1.12.0.aar, took 397 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-runtime/2.6.1/room-runtime-2.6.1.aar, took 375 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-ktx/2.6.1/room-ktx-2.6.1.aar, took 355 ms
-Download https://repo.maven.apache.org/maven2/com/jakewharton/timber/timber/5.0.1/timber-5.0.1.aar, took 60 ms
-Download https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-framework/2.4.0/sqlite-framework-2.4.0.aar, took 317 ms
-Download https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite/2.4.0/sqlite-2.4.0.aar, took 316 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-saveable-android/1.6.2/runtime-saveable-android-1.6.2.aar, took 1 s 44 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-android/1.6.2/runtime-android-1.6.2.aar, took 1 s 720 ms
-Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.4.0/annotation-experimental-1.4.0.aar, took 825 ms
-Download https://dl.google.com/dl/android/maven2/androidx/versionedparcelable/versionedparcelable/1.1.1/versionedparcelable-1.1.1.aar, took 854 ms
-Download https://dl.google.com/dl/android/maven2/androidx/interpolator/interpolator/1.0.0/interpolator-1.0.0.aar, took 510 ms
-Download https://dl.google.com/dl/android/maven2/androidx/arch/core/core-runtime/2.2.0/core-runtime-2.2.0.aar, took 487 ms
-Download https://dl.google.com/dl/android/maven2/androidx/profileinstaller/profileinstaller/1.3.0/profileinstaller-1.3.0.aar, took 298 ms
-Download https://dl.google.com/dl/android/maven2/androidx/startup/startup-runtime/1.1.1/startup-runtime-1.1.1.aar, took 328 ms
-Download https://dl.google.com/dl/android/maven2/androidx/tracing/tracing/1.0.0/tracing-1.0.0.aar, took 287 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/dagger-lint-aar/2.50/dagger-lint-aar-2.50.aar, took 53 ms
-Download https://dl.google.com/dl/android/maven2/com/android/tools/build/aapt2/8.3.2-10880808/aapt2-8.3.2-10880808.pom, took 397 ms
-Download https://dl.google.com/dl/android/maven2/com/android/tools/build/aapt2/8.3.2-10880808/aapt2-8.3.2-10880808-windows.jar, took 1 s 905 ms
-Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.7.0/lifecycle-common-2.7.0.jar, took 368 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-common/2.6.1/room-common-2.6.1.jar, took 296 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.7.1/kotlinx-coroutines-core-jvm-1.7.1.jar, took 684 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-android/1.7.1/kotlinx-coroutines-android-1.7.1.jar, took 48 ms
-Download https://dl.google.com/dl/android/maven2/androidx/arch/core/core-common/2.2.0/core-common-2.2.0.jar, took 286 ms
-Download https://dl.google.com/dl/android/maven2/androidx/collection/collection-jvm/1.4.0/collection-jvm-1.4.0.jar, took 827 ms
-Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.7.0/annotation-jvm-1.7.0.jar, took 346 ms
-Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-csv/1.10.0/commons-csv-1.10.0.jar, took 51 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar, took 102 ms
-Download https://repo.maven.apache.org/maven2/org/maplibre/gl/android-sdk-geojson/5.9.0/android-sdk-geojson-5.9.0.jar, took 100 ms
-Download https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar, took 184 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/hilt-core/2.50/hilt-core-2.50.jar, took 48 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/dagger/2.50/dagger-2.50.jar, took 464 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-compiler/2.6.1/room-compiler-2.6.1.pom, took 859 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/hilt-android-compiler/2.50/hilt-android-compiler-2.50.pom, took 522 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-compiler/2.6.1/room-compiler-2.6.1.module, took 1 s 37 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-compiler-processing/2.6.1/room-compiler-processing-2.6.1.pom, took 874 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-migration/2.6.1/room-migration-2.6.1.pom, took 899 ms
-Download https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6.3/auto-value-annotations-1.6.3.pom, took 35 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-migration/2.6.1/room-migration-2.6.1.module, took 450 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-compiler-processing/2.6.1/room-compiler-processing-2.6.1.module, took 543 ms
-Download https://repo.maven.apache.org/maven2/com/google/auto/auto-common/0.11/auto-common-0.11.pom, took 100 ms
-Download https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-parent/1.6.3/auto-value-parent-1.6.3.pom, took 38 ms
-Download https://repo.maven.apache.org/maven2/com/intellij/annotations/12.0/annotations-12.0.pom, took 526 ms
-Download https://repo.maven.apache.org/maven2/com/google/devtools/ksp/symbol-processing-api/1.9.0-1.0.13/symbol-processing-api-1.9.0-1.0.13.pom, took 1 s 49 ms
-Download https://repo.maven.apache.org/maven2/com/squareup/kotlinpoet/1.14.2/kotlinpoet-1.14.2.pom, took 1 s 162 ms
-Download https://repo.maven.apache.org/maven2/com/google/devtools/ksp/symbol-processing-api/1.9.0-1.0.13/symbol-processing-api-1.9.0-1.0.13.module, took 290 ms
-Download https://repo.maven.apache.org/maven2/com/google/auto/auto-parent/7/auto-parent-7.pom, took 1 s 209 ms
-Download https://repo.maven.apache.org/maven2/com/squareup/kotlinpoet/1.14.2/kotlinpoet-1.14.2.module, took 385 ms
-Download https://repo.maven.apache.org/maven2/com/squareup/kotlinpoet-javapoet/1.14.2/kotlinpoet-javapoet-1.14.2.pom, took 423 ms
-Download https://repo.maven.apache.org/maven2/com/squareup/kotlinpoet-javapoet/1.14.2/kotlinpoet-javapoet-1.14.2.module, took 29 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.8.22/kotlin-stdlib-1.8.22.pom, took 48 ms
-Download https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.15/commons-codec-1.15.pom, took 40 ms
-Download https://repo.maven.apache.org/maven2/org/xerial/sqlite-jdbc/3.41.2.2/sqlite-jdbc-3.41.2.2.pom, took 101 ms
-Download https://repo.maven.apache.org/maven2/com/google/devtools/ksp/symbol-processing-api/1.9.20-1.0.14/symbol-processing-api-1.9.20-1.0.14.pom, took 138 ms
-Download https://repo.maven.apache.org/maven2/com/google/devtools/ksp/symbol-processing-api/1.9.20-1.0.14/symbol-processing-api-1.9.20-1.0.14.module, took 434 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.9.20/kotlin-stdlib-1.9.20.pom, took 45 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.9.20/kotlin-stdlib-1.9.20.module, took 159 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/dagger-spi/2.50/dagger-spi-2.50.pom, took 30 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/dagger-compiler/2.50/dagger-compiler-2.50.pom, took 33 ms
-Download https://repo.maven.apache.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.pom, took 36 ms
-Download https://repo.maven.apache.org/maven2/net/ltgt/gradle/incap/incap/0.2/incap-0.2.pom, took 37 ms
-Download https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/31.0.1-jre/guava-parent-31.0.1-jre.pom, took 33 ms
-Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.pom, took 276 ms
-Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.module, took 271 ms
-Download https://repo.maven.apache.org/maven2/com/google/guava/guava/31.1-jre/guava-31.1-jre.pom, took 39 ms
-Download https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/31.1-jre/guava-parent-31.1-jre.pom, took 63 ms
-Download https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.9.0/gson-2.9.0.pom, took 33 ms
-Download https://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.9.0/gson-parent-2.9.0.pom, took 69 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.8.21/kotlin-reflect-1.8.21.pom, took 40 ms
-Download https://repo.maven.apache.org/maven2/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.pom, took 38 ms
-Download https://repo.maven.apache.org/maven2/com/google/googlejavaformat/google-java-format/1.5/google-java-format-1.5.pom, took 32 ms
-Download https://repo.maven.apache.org/maven2/com/google/googlejavaformat/google-java-format-parent/1.5/google-java-format-parent-1.5.pom, took 32 ms
-Download https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.pom, took 36 ms
-Download https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.module, took 27 ms
-Download https://repo.maven.apache.org/maven2/com/google/errorprone/javac-shaded/9-dev-r4023-3/javac-shaded-9-dev-r4023-3.pom, took 38 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/hilt-android-compiler/2.50/hilt-android-compiler-2.50.jar, took 249 ms
-Download https://repo.maven.apache.org/maven2/com/google/auto/auto-common/0.11/auto-common-0.11.jar, took 150 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-migration/2.6.1/room-migration-2.6.1.jar, took 463 ms
-Download https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6.3/auto-value-annotations-1.6.3.jar, took 89 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/dagger-compiler/2.50/dagger-compiler-2.50.jar, took 2 s 375 ms
-Download https://repo.maven.apache.org/maven2/com/google/devtools/ksp/symbol-processing-api/1.9.20-1.0.14/symbol-processing-api-1.9.20-1.0.14.jar, took 204 ms
-Download https://repo.maven.apache.org/maven2/com/intellij/annotations/12.0/annotations-12.0.jar, took 65 ms
-Download https://repo.maven.apache.org/maven2/com/squareup/kotlinpoet-javapoet/1.14.2/kotlinpoet-javapoet-1.14.2.jar, took 66 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-compiler-processing/2.6.1/room-compiler-processing-2.6.1.jar, took 3 s 590 ms
-Download https://repo.maven.apache.org/maven2/com/squareup/kotlinpoet/1.14.2/kotlinpoet-1.14.2.jar, took 425 ms
-Download https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.15/commons-codec-1.15.jar, took 311 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/dagger-spi/2.50/dagger-spi-2.50.jar, took 5 s 502 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.9.20/kotlin-stdlib-1.9.20.jar, took 2 s 821 ms
-Download https://repo.maven.apache.org/maven2/com/google/googlejavaformat/google-java-format/1.5/google-java-format-1.5.jar, took 345 ms
-Download https://dl.google.com/dl/android/maven2/androidx/room/room-compiler/2.6.1/room-compiler-2.6.1.jar, took 8 s 488 ms
-Download https://repo.maven.apache.org/maven2/net/ltgt/gradle/incap/incap/0.2/incap-0.2.jar, took 60 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.8.21/kotlin-reflect-1.8.21.jar, took 5 s 94 ms
-Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.jar, took 358 ms
-Download https://repo.maven.apache.org/maven2/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar, took 58 ms
-Download https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar, took 378 ms
-Download https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar, took 79 ms
-Download https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar, took 365 ms
-Download https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar, took 216 ms
-Download https://repo.maven.apache.org/maven2/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar, took 4 s 281 ms
-Download https://repo.maven.apache.org/maven2/com/google/errorprone/javac-shaded/9-dev-r4023-3/javac-shaded-9-dev-r4023-3.jar, took 2 s 846 ms
-Download https://repo.maven.apache.org/maven2/org/xerial/sqlite-jdbc/3.41.2.2/sqlite-jdbc-3.41.2.2.jar, took 11 s 274 ms
-Download https://repo.maven.apache.org/maven2/com/google/devtools/ksp/symbol-processing/1.9.22-1.0.17/symbol-processing-1.9.22-1.0.17.pom, took 98 ms
-Download https://repo.maven.apache.org/maven2/com/google/devtools/ksp/symbol-processing/1.9.22-1.0.17/symbol-processing-1.9.22-1.0.17.jar, took 548 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.6.10/kotlin-reflect-1.6.10.pom, took 64 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-script-runtime/1.9.22/kotlin-script-runtime-1.9.22.pom, took 67 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-script-runtime/1.9.22/kotlin-script-runtime-1.9.22.jar, took 26 ms
-Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.6.10/kotlin-reflect-1.6.10.jar, took 1 s 976 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/compiler/compiler/1.5.8/compiler-1.5.8.pom, took 382 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/compiler/compiler/1.5.8/compiler-1.5.8.module, took 1 s 156 ms
-Download https://dl.google.com/dl/android/maven2/androidx/compose/compiler/compiler/1.5.8/compiler-1.5.8.jar, took 1 s 443 ms
-Download https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.10.0/okhttp-4.10.0.jar, took 2 s 136 ms
-Download https://repo.maven.apache.org/maven2/com/squareup/okio/okio-jvm/3.0.0/okio-jvm-3.0.0.jar, took 960 ms
-Download https://dl.google.com/dl/android/maven2/androidx/concurrent/concurrent-futures/1.1.0/concurrent-futures-1.1.0.jar, took 495 ms
-Download https://repo.maven.apache.org/maven2/org/maplibre/gl/android-sdk-turf/5.9.0/android-sdk-turf-5.9.0.jar, took 473 ms
-Download https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/1.0/listenablefuture-1.0.jar, took 468 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/hilt-compiler/2.50/hilt-compiler-2.50.pom, took 84 ms
-Download https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.7.1/error_prone_annotations-2.7.1.pom, took 31 ms
-Download https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.7.1/error_prone_parent-2.7.1.pom, took 29 ms
-Download https://repo.maven.apache.org/maven2/com/google/dagger/hilt-compiler/2.50/hilt-compiler-2.50.jar, took 949 ms
 > Task :app:preBuild UP-TO-DATE
 > Task :app:preDebugBuild UP-TO-DATE
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
@@ -176,62 +10,38 @@ Download https://repo.maven.apache.org/maven2/com/google/dagger/hilt-compiler/2.
 > Task :app:generateDebugResValues
 > Task :app:createDebugCompatibleScreenManifests
 > Task :app:generateDebugResources
+> Task :app:mapDebugSourceSetPaths
 > Task :app:checkDebugAarMetadata
 > Task :app:javaPreCompileDebug
-> Task :app:mapDebugSourceSetPaths
-> Task :app:mergeDebugResources
 > Task :app:extractDeepLinksDebug
-> Task :app:packageDebugResources
 > Task :app:mergeDebugShaders
 > Task :app:compileDebugShaders NO-SOURCE
 > Task :app:generateDebugAssets UP-TO-DATE
-> Task :app:parseDebugLocalResources
-> Task :app:desugarDebugFileDependencies
+> Task :app:packageDebugResources
 > Task :app:mergeDebugAssets
 > Task :app:compressDebugAssets
+> Task :app:desugarDebugFileDependencies
 > Task :app:processDebugMainManifest
 > Task :app:processDebugManifest
+> Task :app:parseDebugLocalResources
 > Task :app:processDebugManifestForPackage
+> Task :app:mergeDebugJniLibFolders
 > Task :app:validateSigningDebug
 > Task :app:writeDebugAppMetadata
-> Task :app:writeDebugSigningConfigVersions
-> Task :app:mergeDebugJniLibFolders
 > Task :app:checkDebugDuplicateClasses
-
-> Task :app:processDebugResources
-AGPBI: {"kind":"warning","text":"We recommend using a newer Android Gradle plugin to use compileSdk = 35\n\nThis Android Gradle plugin (8.3.2) was tested up to compileSdk = 34.\n\nYou are strongly encouraged to update your project to use a newer\nAndroid Gradle plugin that has been tested with compileSdk = 35.\n\nIf you are already using the latest version of the Android Gradle plugin,\nyou may need to wait until a newer version with support for compileSdk = 35 is available.\n\nTo suppress this warning, add/update\n    android.suppressUnsupportedCompileSdk=35\nto this project's gradle.properties.","sources":[{}]}
-
+> Task :app:writeDebugSigningConfigVersions
 > Task :app:mergeLibDexDebug
 > Task :app:mergeDebugNativeLibs
+> Task :app:mergeDebugResources
 > Task :app:mergeExtDexDebug
+> Task :app:stripDebugDebugSymbols
+> Task :app:processDebugResources
 
 > Task :app:stripDebugDebugSymbols
 Unable to strip the following libraries, packaging them as they are: libmapbox-gl.so.
-The Daemon will expire after the build after running out of JVM heap space.
-The project memory settings are likely not configured or are configured to an insufficient value.
-The daemon will restart for the next build, which may increase subsequent build times.
-These settings can be adjusted by setting 'org.gradle.jvmargs' in 'gradle.properties'.
-The currently configured max heap space is '512 MiB' and the configured max metaspace is '384 MiB'.
-For more information on how to set these values, please refer to https://docs.gradle.org/8.7/userguide/build_environment.html#sec:configuring_jvm_memory in the Gradle documentation.
-To disable this warning, set 'org.gradle.daemon.performance.disable-logging=true'.
-Daemon will be stopped at the end of the build after running out of JVM heap space
-Problem in daemon expiration check
-java.lang.OutOfMemoryError: Java heap space
-java.lang.OutOfMemoryError: Java heap space
-java.lang.OutOfMemoryError: Java heap space
 
-> Task :app:mergeExtDexDebug
-AGPBI: {"kind":"error","text":"java.lang.OutOfMemoryError: Java heap space","sources":[{}],"tool":"D8"}
-AGPBI: {"kind":"error","text":"java.lang.OutOfMemoryError: Java heap space","sources":[{}],"tool":"D8"}
-AGPBI: {"kind":"error","text":"java.lang.OutOfMemoryError: Java heap space","sources":[{}],"tool":"D8"}
-AGPBI: {"kind":"error","text":"java.lang.OutOfMemoryError: Java heap space","sources":[{}],"tool":"D8"}
-
-> Task :app:mergeExtDexDebug FAILED
 > Task :app:kspDebugKotlin
-
 > Task :app:compileDebugKotlin
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/MainViewModel.kt:24:28 Unresolved reference: DEFAULT_STYLE_URI
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:37:12 Unresolved reference: maplibre
 e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:38:12 Unresolved reference: maplibre
 e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:39:12 Unresolved reference: maplibre
 e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:40:12 Unresolved reference: maplibre
@@ -246,91 +56,64 @@ e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com
 e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:49:12 Unresolved reference: maplibre
 e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:50:12 Unresolved reference: maplibre
 e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:51:12 Unresolved reference: maplibre
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:64:24 Property delegate must have a 'getValue(Nothing?, KProperty<*>)' method. None of the following functions is suitable: 
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:52:12 Unresolved reference: maplibre
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:65:24 Property delegate must have a 'getValue(Nothing?, KProperty<*>)' method. None of the following functions is suitable: 
 public inline operator fun <T> State<Nothing?>.getValue(thisObj: Any?, property: KProperty<*>): Nothing? defined in androidx.compose.runtime
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:64:24 Property delegate must have a 'setValue(Nothing?, KProperty<*>, [Error type: Error delegation type for remember { mutableStateOf<MapLibreMap?>(null) }])' method. None of the following functions is suitable: 
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:65:24 Property delegate must have a 'setValue(Nothing?, KProperty<*>, [Error type: Error delegation type for remember { mutableStateOf<MapLibreMap?>(null) }])' method. None of the following functions is suitable: 
 public inline operator fun <T> MutableState<Nothing?>.setValue(thisObj: Any?, property: KProperty<*>, value: Nothing?): Unit defined in androidx.compose.runtime
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:64:50 Unresolved reference: MapLibreMap
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:65:21 Property delegate must have a 'getValue(Nothing?, KProperty<*>)' method. None of the following functions is suitable: 
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:65:50 Unresolved reference: MapLibreMap
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:66:21 Property delegate must have a 'getValue(Nothing?, KProperty<*>)' method. None of the following functions is suitable: 
 public inline operator fun <T> State<Nothing?>.getValue(thisObj: Any?, property: KProperty<*>): Nothing? defined in androidx.compose.runtime
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:65:21 Property delegate must have a 'setValue(Nothing?, KProperty<*>, [Error type: Error delegation type for remember { mutableStateOf<Style?>(null) }])' method. None of the following functions is suitable: 
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:66:21 Property delegate must have a 'setValue(Nothing?, KProperty<*>, [Error type: Error delegation type for remember { mutableStateOf<Style?>(null) }])' method. None of the following functions is suitable: 
 public inline operator fun <T> MutableState<Nothing?>.setValue(thisObj: Any?, property: KProperty<*>, value: Nothing?): Unit defined in androidx.compose.runtime
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:65:47 Unresolved reference: Style
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:74:32 Cannot infer a type for this parameter. Please specify it explicitly.
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:75:33 Cannot infer a type for this parameter. Please specify it explicitly.
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:88:31 Cannot infer a type for this parameter. Please specify it explicitly.
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:100:25 Unresolved reference: setStyle
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:100:34 Unresolved reference: Style
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:100:71 Cannot infer a type for this parameter. Please specify it explicitly.
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:117:25 Cannot infer a type for this parameter. Please specify it explicitly.
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:126:28 Unresolved reference: MapLibreMap
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:126:61 Cannot infer a type for this parameter. Please specify it explicitly.
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:133:42 Cannot infer a type for this parameter. Please specify it explicitly.
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:154:40 Cannot infer a type for this parameter. Please specify it explicitly.
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:157:33 Unresolved reference: CameraMode
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:159:33 Unresolved reference: CameraMode
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:161:59 Variable expected
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:162:60 Unresolved reference: CameraMode
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:164:45 Cannot infer a type for this parameter. Please specify it explicitly.
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:182:25 Unresolved reference: MaterialTheme
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:188:36 Unresolved reference: Style
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:191:13 Unresolved reference: GeoJsonSource
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:193:17 Unresolved reference: FeatureCollection
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:199:13 Unresolved reference: CircleLayer
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:203:17 Unresolved reference: circleColor
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:204:17 Unresolved reference: circleRadius
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:205:17 Unresolved reference: circleStrokeColor
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:206:17 Unresolved reference: circleStrokeWidth
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:212:37 Unresolved reference: Style
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:214:9 Unresolved reference: Feature
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:214:30 Unresolved reference: Point
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:215:13 Unresolved reference: addStringProperty
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:66:47 Unresolved reference: Style
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:75:32 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:76:33 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:89:31 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:101:25 Unresolved reference: setStyle
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:101:34 Unresolved reference: Style
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:101:71 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:118:25 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:127:28 Unresolved reference: MapLibreMap
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:127:61 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:134:42 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:155:40 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:158:33 Unresolved reference: CameraMode
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:160:33 Unresolved reference: CameraMode
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:162:59 Variable expected
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:163:60 Unresolved reference: CameraMode
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:165:45 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:189:36 Unresolved reference: Style
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:192:13 Unresolved reference: GeoJsonSource
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:194:17 Unresolved reference: FeatureCollection
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:200:13 Unresolved reference: CircleLayer
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:204:17 Unresolved reference: circleColor
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:205:17 Unresolved reference: circleRadius
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:206:17 Unresolved reference: circleStrokeColor
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:207:17 Unresolved reference: circleStrokeWidth
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:213:37 Unresolved reference: Style
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:215:9 Unresolved reference: Feature
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:215:30 Unresolved reference: Point
 e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:216:13 Unresolved reference: addStringProperty
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:219:23 Unresolved reference: GeoJsonSource
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:220:22 Unresolved reference: FeatureCollection
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:223:55 Unresolved reference: MapLibreMap
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:223:75 Unresolved reference: Style
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:230:13 Unresolved reference: LocationComponentActivationOptions
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:233:23 Variable expected
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:217:13 Unresolved reference: addStringProperty
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:220:23 Unresolved reference: GeoJsonSource
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:221:22 Unresolved reference: FeatureCollection
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:224:55 Unresolved reference: MapLibreMap
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:224:75 Unresolved reference: Style
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:231:13 Unresolved reference: LocationComponentActivationOptions
 e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:234:23 Variable expected
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:234:36 Unresolved reference: CameraMode
 e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:235:23 Variable expected
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:235:36 Unresolved reference: RenderMode
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:247:45 Unresolved reference: MapView
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:250:9 Unresolved reference: MapView
-e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:251:13 Unresolved reference: onCreate
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:235:36 Unresolved reference: CameraMode
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:236:23 Variable expected
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:236:36 Unresolved reference: RenderMode
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:248:45 Unresolved reference: MapView
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:251:9 Unresolved reference: MapView
+e: file:///C:/Users/LAPTO/AndroidStudioProjects/GeminiGTFS/app/src/main/java/com/example/geminitesttransmaps/ui/map/MapScreen.kt:252:13 Unresolved reference: onCreate
 
 > Task :app:compileDebugKotlin FAILED
 
-FAILURE: Build completed with 2 failures.
+FAILURE: Build failed with an exception.
 
-1: Task failed with an exception.
------------
-* What went wrong:
-Execution failed for task ':app:mergeExtDexDebug'.
-> Could not resolve all files for configuration ':app:debugRuntimeClasspath'.
-   > Failed to transform material3-release.aar (androidx.compose.material3:material3-android:1.2.0) to match attributes {artifactType=android-dex, dexing-component-attributes=ComponentSpecificParameters(minSdkVersion=24, debuggable=true, enableCoreLibraryDesugaring=false, enableGlobalSynthetics=true, enableApiModeling=false, dependenciesClassesAreInstrumented=false, asmTransformComponent=null, useJacocoTransformInstrumentation=false, enableDesugaring=true, needsClasspath=false, useFullClasspath=false, componentIfUsingFullClasspath=null), org.gradle.category=library, org.gradle.status=release, org.gradle.usage=java-runtime, org.jetbrains.kotlin.platform.type=androidJvm}.
-      > Execution failed for DexingNoClasspathTransform: C:\Users\LAPTO\.gradle\caches\transforms-4\6536384a2cf9ea1fb222a3e01e4f576e\transformed\jetified-material3-release-runtime.jar.
-         > Error while dexing.
-   > Failed to transform material-icons-extended-release.aar (androidx.compose.material:material-icons-extended-android:1.6.2) to match attributes {artifactType=android-dex, dexing-component-attributes=ComponentSpecificParameters(minSdkVersion=24, debuggable=true, enableCoreLibraryDesugaring=false, enableGlobalSynthetics=true, enableApiModeling=false, dependenciesClassesAreInstrumented=false, asmTransformComponent=null, useJacocoTransformInstrumentation=false, enableDesugaring=true, needsClasspath=false, useFullClasspath=false, componentIfUsingFullClasspath=null), org.gradle.category=library, org.gradle.status=release, org.gradle.usage=java-runtime, org.jetbrains.kotlin.platform.type=androidJvm}.
-      > Execution failed for DexingNoClasspathTransform: C:\Users\LAPTO\.gradle\caches\transforms-4\b46142ffb1be9e649322ad7dca9d0d4d\transformed\jetified-material-icons-extended-release-runtime.jar.
-         > Error while dexing.
-   > Failed to transform material-release.aar (androidx.compose.material:material-android:1.6.2) to match attributes {artifactType=android-dex, dexing-component-attributes=ComponentSpecificParameters(minSdkVersion=24, debuggable=true, enableCoreLibraryDesugaring=false, enableGlobalSynthetics=true, enableApiModeling=false, dependenciesClassesAreInstrumented=false, asmTransformComponent=null, useJacocoTransformInstrumentation=false, enableDesugaring=true, needsClasspath=false, useFullClasspath=false, componentIfUsingFullClasspath=null), org.gradle.category=library, org.gradle.status=release, org.gradle.usage=java-runtime, org.jetbrains.kotlin.platform.type=androidJvm}.
-      > Execution failed for DexingNoClasspathTransform: C:\Users\LAPTO\.gradle\caches\transforms-4\a31f56ed9afd2d4e97d696fecbf2295d\transformed\jetified-material-release-runtime.jar.
-         > Error while dexing.
-   > Failed to transform animation-release.aar (androidx.compose.animation:animation-android:1.6.2) to match attributes {artifactType=android-dex, dexing-component-attributes=ComponentSpecificParameters(minSdkVersion=24, debuggable=true, enableCoreLibraryDesugaring=false, enableGlobalSynthetics=true, enableApiModeling=false, dependenciesClassesAreInstrumented=false, asmTransformComponent=null, useJacocoTransformInstrumentation=false, enableDesugaring=true, needsClasspath=false, useFullClasspath=false, componentIfUsingFullClasspath=null), org.gradle.category=library, org.gradle.status=release, org.gradle.usage=java-runtime, org.jetbrains.kotlin.platform.type=androidJvm}.
-      > Execution failed for DexingNoClasspathTransform: C:\Users\LAPTO\.gradle\caches\transforms-4\810994e93dda2cb940d2ecf30aa6c70d\transformed\jetified-animation-release-runtime.jar.
-         > Error while dexing.
-
-* Try:
-> Run with --stacktrace option to get the stack trace.
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights.
-> Get more help at https://help.gradle.org.
-==============================================================================
-
-2: Task failed with an exception.
------------
 * What went wrong:
 Execution failed for task ':app:compileDebugKotlin'.
 > A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
@@ -341,8 +124,7 @@ Execution failed for task ':app:compileDebugKotlin'.
 > Run with --info or --debug option to get more log output.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
-==============================================================================
 
-BUILD FAILED in 14m 45s
+BUILD FAILED in 8m 40s
 30 actionable tasks: 30 executed
 Configuration cache entry stored.

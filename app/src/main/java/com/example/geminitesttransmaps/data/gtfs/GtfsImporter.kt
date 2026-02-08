@@ -266,7 +266,7 @@ class GtfsImporter(
     }
 
     companion object {
-        const val DEFAULT_BATCH_SIZE = 500
+        const val DEFAULT_BATCH_SIZE = 1000
         // GTFS allows times up to 47:59:59 to represent service past midnight.
         const val DEFAULT_MAX_GTFS_HOURS = 47
     }

@@ -35,6 +35,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import com.example.geminitesttransmaps.R
 import com.example.geminitesttransmaps.data.local.StopEntity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.maplibre.android.location.LocationComponentActivationOptions
 import org.maplibre.android.location.modes.CameraMode
 import org.maplibre.android.location.modes.RenderMode
@@ -101,7 +103,6 @@ fun MapScreen(
             mapInstance.setStyle(Style.Builder().fromUri(styleUri)) { style ->
                 mapStyle = style
                 ensureStopLayer(style)
-                updateStopSource(style, stops)
                 if (hasLocationPermission) {
                     if (enableUserLocation(context, mapInstance, style)) {
                         isLocationEnabled = true
@@ -115,7 +116,12 @@ fun MapScreen(
     }
 
     LaunchedEffect(stops, mapStyle) {
-        mapStyle?.let { style -> updateStopSource(style, stops) }
+        val style = mapStyle ?: return@LaunchedEffect
+        val featureCollection = withContext(Dispatchers.Default) {
+            buildStopFeatureCollection(stops)
+        }
+        style.getSourceAs<GeoJsonSource>(MapScreenDefaults.STOP_SOURCE_ID)
+            ?.setGeoJson(featureCollection)
     }
 
     val currentStopsById by rememberUpdatedState(stopsById)
@@ -210,15 +216,14 @@ private fun ensureStopLayer(style: Style) {
     }
 }
 
-private fun updateStopSource(style: Style, stops: List<StopEntity>) {
+private fun buildStopFeatureCollection(stops: List<StopEntity>): FeatureCollection {
     val features = stops.map { stop ->
         Feature.fromGeometry(Point.fromLngLat(stop.stopLon, stop.stopLat)).apply {
             addStringProperty(STOP_ID_PROPERTY, stop.stopId)
             addStringProperty(STOP_NAME_PROPERTY, stop.stopName)
         }
     }
-    style.getSourceAs<GeoJsonSource>(MapScreenDefaults.STOP_SOURCE_ID)
-        ?.setGeoJson(FeatureCollection.fromFeatures(features))
+    return FeatureCollection.fromFeatures(features)
 }
 
 private fun enableUserLocation(context: Context, map: MapLibreMap, style: Style): Boolean {

@@ -60,8 +60,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     debugImplementation(libs.androidx.compose.ui.tooling)
 
-    implementation("org.maplibre.gl:android-sdk:10.0.2")
-    implementation("org.maplibre.gl:android-sdk-geojson:5.9.0")
+    implementation(libs.maplibre.android.sdk)
+    implementation(libs.maplibre.android.sdk.geojson)
 
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)

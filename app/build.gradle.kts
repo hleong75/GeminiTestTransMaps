@@ -12,12 +12,12 @@ repositories {
 
 android {
     namespace = "com.example.geminitesttransmaps"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.geminitesttransmaps"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
@@ -25,6 +25,7 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+        isCoreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
@@ -60,8 +61,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     debugImplementation(libs.androidx.compose.ui.tooling)
 
-    implementation("org.maplibre.gl:android-sdk:10.0.2")
-    implementation("org.maplibre.gl:android-sdk-geojson:5.9.0")
+    implementation(libs.maplibre.android.sdk)
+    implementation(libs.maplibre.android.sdk.geojson)
 
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
@@ -71,4 +72,5 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     implementation(libs.commons.csv)
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
 }

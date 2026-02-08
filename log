@@ -1,175 +1,358 @@
-Invalid catalog definition:
-  - Problem: In version catalog libs, you can only call the 'from' method a single time.
-    
-    Reason: The method was called more than once.
-    
-    Possible solution: Remove further usages of the method call.
-    
-    For more information, please refer to https://docs.gradle.org/8.7/userguide/version_catalog_problems.html#too_many_import_invocation in the Gradle documentation.
+Executing tasks: [:app:assembleDebug] in project C:\Users\LAPTO\AndroidStudioProjects\GeminiGTFS
+
+Calculating task graph as no cached configuration is available for tasks: :app:assembleDebug
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.9.22/kotlin-stdlib-1.9.22.pom, took 80 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.9.22/kotlin-stdlib-1.9.22.module, took 59 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.9.22/kotlin-reflect-1.9.22.pom, took 182 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.9.22/kotlin-stdlib-1.9.22.jar, took 6 s 266 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.9.22/kotlin-reflect-1.9.22.jar, took 7 s 778 ms
+AGPBI: {"kind":"warning","text":"We recommend using a newer Android Gradle plugin to use compileSdk = 35\n\nThis Android Gradle plugin (8.3.2) was tested up to compileSdk = 34.\n\nYou are strongly encouraged to update your project to use a newer\nAndroid Gradle plugin that has been tested with compileSdk = 35.\n\nIf you are already using the latest version of the Android Gradle plugin,\nyou may need to wait until a newer version with support for compileSdk = 35 is available.\n\nTo suppress this warning, add/update\n    android.suppressUnsupportedCompileSdk=35\nto this project's gradle.properties.","sources":[{}]}
+Download https://dl.google.com/dl/android/maven2/androidx/core/core-ktx/1.12.0/core-ktx-1.12.0.pom, took 1 s 170 ms
+Download https://dl.google.com/dl/android/maven2/androidx/activity/activity-compose/1.8.2/activity-compose-1.8.2.pom, took 1 s 190 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime-ktx/2.7.0/lifecycle-runtime-ktx-2.7.0.pom, took 1 s 204 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/compose-bom/2024.02.01/compose-bom-2024.02.01.pom, took 1 s 144 ms
+Download https://dl.google.com/dl/android/maven2/androidx/core/core-ktx/1.12.0/core-ktx-1.12.0.module, took 447 ms
+Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-compose/2.7.7/navigation-compose-2.7.7.pom, took 883 ms
+Download https://dl.google.com/dl/android/maven2/androidx/activity/activity-compose/1.8.2/activity-compose-1.8.2.module, took 1 s 17 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime-ktx/2.7.0/lifecycle-runtime-ktx-2.7.0.module, took 1 s 5 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-compose/2.7.0/lifecycle-viewmodel-compose-2.7.0.pom, took 618 ms
+Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-compose/2.7.7/navigation-compose-2.7.7.module, took 410 ms
+Download https://dl.google.com/dl/android/maven2/androidx/room/room-runtime/2.6.1/room-runtime-2.6.1.pom, took 383 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-compose/2.7.0/lifecycle-viewmodel-compose-2.7.0.module, took 341 ms
+Download https://repo.maven.apache.org/maven2/org/maplibre/gl/android-sdk/10.0.2/android-sdk-10.0.2.pom, took 257 ms
+Download https://repo.maven.apache.org/maven2/org/maplibre/gl/android-sdk/10.0.2/android-sdk-10.0.2.module, took 88 ms
+Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-csv/1.10.0/commons-csv-1.10.0.pom, took 46 ms
+Download https://dl.google.com/dl/android/maven2/androidx/room/room-runtime/2.6.1/room-runtime-2.6.1.module, took 975 ms
+Download https://dl.google.com/dl/android/maven2/androidx/room/room-ktx/2.6.1/room-ktx-2.6.1.pom, took 939 ms
+Download https://repo.maven.apache.org/maven2/com/google/dagger/hilt-android/2.50/hilt-android-2.50.pom, took 78 ms
+Download https://dl.google.com/dl/android/maven2/androidx/room/room-ktx/2.6.1/room-ktx-2.6.1.module, took 548 ms
+Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/56/commons-parent-56.pom, took 278 ms
+Download https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.1/junit-bom-5.9.1.pom, took 33 ms
+Download https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.1/junit-bom-5.9.1.module, took 56 ms
+Download https://dl.google.com/dl/android/maven2/androidx/core/core/1.12.0/core-1.12.0.pom, took 327 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.1.0/annotation-1.1.0.pom, took 673 ms
+Download https://dl.google.com/dl/android/maven2/androidx/core/core/1.12.0/core-1.12.0.module, took 1 s 170 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime/2.7.0/lifecycle-runtime-2.7.0.pom, took 315 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-android/1.7.1/kotlinx-coroutines-android-1.7.1.pom, took 51 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.7.1/kotlinx-coroutines-bom-1.7.1.pom, took 39 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-android/1.7.1/kotlinx-coroutines-android-1.7.1.module, took 32 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime/2.7.0/lifecycle-runtime-2.7.0.module, took 1 s 187 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui/1.0.1/ui-1.0.1.pom, took 366 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui/1.0.1/ui-1.0.1.module, took 1 s 168 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-saveable/1.0.1/runtime-saveable-1.0.1.pom, took 341 ms
+Download https://dl.google.com/dl/android/maven2/androidx/activity/activity-ktx/1.8.2/activity-ktx-1.8.2.pom, took 383 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime/1.0.1/runtime-1.0.1.pom, took 402 ms
+Download https://dl.google.com/dl/android/maven2/androidx/activity/activity-ktx/1.8.2/activity-ktx-1.8.2.module, took 344 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime/1.0.1/runtime-1.0.1.module, took 347 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-saveable/1.0.1/runtime-saveable-1.0.1.module, took 1 s 167 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel/2.7.0/lifecycle-viewmodel-2.7.0.pom, took 373 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel/2.7.0/lifecycle-viewmodel-2.7.0.module, took 355 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-extended/1.6.2/material-icons-extended-1.6.2.pom, took 1 s 200 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-extended/1.6.2/material-icons-extended-1.6.2.module, took 428 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3/1.2.0/material3-1.2.0.pom, took 1 s 116 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3/1.2.0/material3-1.2.0.module, took 444 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime/1.6.2/runtime-1.6.2.pom, took 1 s 126 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime/1.6.2/runtime-1.6.2.module, took 527 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-saveable/1.6.2/runtime-saveable-1.6.2.pom, took 846 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-saveable/1.6.2/runtime-saveable-1.6.2.module, took 709 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui/1.6.2/ui-1.6.2.pom, took 754 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui/1.6.2/ui-1.6.2.module, took 1 s 116 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling/1.6.2/ui-tooling-1.6.2.pom, took 347 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling/1.6.2/ui-tooling-1.6.2.module, took 1 s 225 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-preview/1.6.2/ui-tooling-preview-1.6.2.pom, took 571 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-preview/1.6.2/ui-tooling-preview-1.6.2.module, took 314 ms
+Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-runtime-ktx/2.7.7/navigation-runtime-ktx-2.7.7.pom, took 578 ms
+Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-runtime-ktx/2.7.7/navigation-runtime-ktx-2.7.7.module, took 445 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation/1.6.2/animation-1.6.2.pom, took 344 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-layout/1.6.2/foundation-layout-1.6.2.pom, took 1 s 40 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation/1.6.2/animation-1.6.2.module, took 731 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-layout/1.6.2/foundation-layout-1.6.2.module, took 338 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common-java8/2.7.0/lifecycle-common-java8-2.7.0.pom, took 294 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-ktx/2.7.0/lifecycle-viewmodel-ktx-2.7.0.pom, took 298 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.1.0/annotation-experimental-1.1.0.pom, took 302 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-savedstate/2.7.0/lifecycle-viewmodel-savedstate-2.7.0.pom, took 339 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common-java8/2.7.0/lifecycle-common-java8-2.7.0.module, took 292 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-ktx/2.7.0/lifecycle-viewmodel-ktx-2.7.0.module, took 315 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.1.0/annotation-experimental-1.1.0.module, took 2 s 508 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-savedstate/2.7.0/lifecycle-viewmodel-savedstate-2.7.0.module, took 2 s 514 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.5.0/annotation-1.5.0.pom, took 757 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.5.0/annotation-1.5.0.module, took 992 ms
+Download https://dl.google.com/dl/android/maven2/androidx/fragment/fragment/1.5.5/fragment-1.5.5.pom, took 936 ms
+Download https://repo.maven.apache.org/maven2/org/maplibre/gl/android-sdk-geojson/5.9.0/android-sdk-geojson-5.9.0.pom, took 535 ms
+Download https://repo.maven.apache.org/maven2/org/maplibre/gl/android-sdk-geojson/5.9.0/android-sdk-geojson-5.9.0.module, took 332 ms
+Download https://repo.maven.apache.org/maven2/org/maplibre/gl/android-sdk-turf/5.9.0/android-sdk-turf-5.9.0.pom, took 1 s 88 ms
+Download https://repo.maven.apache.org/maven2/com/mapbox/mapboxsdk/mapbox-android-gestures/0.7.0/mapbox-android-gestures-0.7.0.pom, took 1 s 109 ms
+Download https://dl.google.com/dl/android/maven2/androidx/fragment/fragment/1.5.5/fragment-1.5.5.module, took 840 ms
+Download https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.10.0/okhttp-4.10.0.pom, took 56 ms
+Download https://repo.maven.apache.org/maven2/org/maplibre/gl/android-sdk-turf/5.9.0/android-sdk-turf-5.9.0.module, took 206 ms
+Download https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.10.0/okhttp-4.10.0.module, took 378 ms
+Download https://repo.maven.apache.org/maven2/com/jakewharton/timber/timber/5.0.1/timber-5.0.1.pom, took 78 ms
+Download https://repo.maven.apache.org/maven2/com/jakewharton/timber/timber/5.0.1/timber-5.0.1.module, took 579 ms
+Download https://dl.google.com/dl/android/maven2/androidx/interpolator/interpolator/1.0.0/interpolator-1.0.0.pom, took 1 s 81 ms
+Download https://dl.google.com/dl/android/maven2/androidx/arch/core/core-runtime/2.2.0/core-runtime-2.2.0.pom, took 547 ms
+Download https://dl.google.com/dl/android/maven2/androidx/room/room-common/2.6.1/room-common-2.6.1.pom, took 550 ms
+Download https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite/2.4.0/sqlite-2.4.0.pom, took 929 ms
+Download https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-framework/2.4.0/sqlite-framework-2.4.0.pom, took 930 ms
+Download https://dl.google.com/dl/android/maven2/androidx/arch/core/core-runtime/2.2.0/core-runtime-2.2.0.module, took 852 ms
+Download https://dl.google.com/dl/android/maven2/androidx/room/room-common/2.6.1/room-common-2.6.1.module, took 844 ms
+Download https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-framework/2.4.0/sqlite-framework-2.4.0.module, took 941 ms
+Download https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite/2.4.0/sqlite-2.4.0.module, took 1 s 12 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.3.1/annotation-experimental-1.3.1.pom, took 728 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.3.1/annotation-experimental-1.3.1.module, took 1 s 218 ms
+Download https://dl.google.com/dl/android/maven2/androidx/savedstate/savedstate/1.2.0/savedstate-1.2.0.pom, took 290 ms
+Download https://repo.maven.apache.org/maven2/com/google/dagger/dagger/2.50/dagger-2.50.pom, took 63 ms
+Download https://repo.maven.apache.org/maven2/com/google/dagger/hilt-core/2.50/hilt-core-2.50.pom, took 36 ms
+Download https://repo.maven.apache.org/maven2/com/google/dagger/dagger-lint-aar/2.50/dagger-lint-aar-2.50.pom, took 42 ms
+Download https://dl.google.com/dl/android/maven2/androidx/savedstate/savedstate/1.2.0/savedstate-1.2.0.module, took 1 s 181 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.7.0/lifecycle-common-2.7.0.pom, took 347 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.7.0/lifecycle-common-2.7.0.module, took 1 s 170 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.6.0/annotation-1.6.0.pom, took 905 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.6.0/annotation-1.6.0.module, took 1 s 74 ms
+Download https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.0.0/collection-1.0.0.pom, took 900 ms
+Download https://dl.google.com/dl/android/maven2/androidx/concurrent/concurrent-futures/1.0.0/concurrent-futures-1.0.0.pom, took 980 ms
+Download https://dl.google.com/dl/android/maven2/androidx/versionedparcelable/versionedparcelable/1.1.1/versionedparcelable-1.1.1.pom, took 995 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.0/kotlin-stdlib-jdk8-1.8.0.pom, took 48 ms
+Download https://dl.google.com/dl/android/maven2/androidx/arch/core/core-common/2.2.0/core-common-2.2.0.pom, took 919 ms
+Download https://dl.google.com/dl/android/maven2/androidx/profileinstaller/profileinstaller/1.3.0/profileinstaller-1.3.0.pom, took 922 ms
+Download https://dl.google.com/dl/android/maven2/androidx/profileinstaller/profileinstaller/1.3.0/profileinstaller-1.3.0.module, took 944 ms
+Download https://dl.google.com/dl/android/maven2/androidx/arch/core/core-common/2.2.0/core-common-2.2.0.module, took 971 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.pom, took 51 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core/1.7.1/kotlinx-coroutines-core-1.7.1.pom, took 32 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core/1.7.1/kotlinx-coroutines-core-1.7.1.module, took 51 ms
+Download https://dl.google.com/dl/android/maven2/androidx/savedstate/savedstate-ktx/1.2.1/savedstate-ktx-1.2.1.pom, took 858 ms
+Download https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.8.2/activity-1.8.2.pom, took 893 ms
+Download https://dl.google.com/dl/android/maven2/androidx/savedstate/savedstate-ktx/1.2.1/savedstate-ktx-1.2.1.module, took 532 ms
+Download https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.8.2/activity-1.8.2.module, took 942 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-extended-android/1.6.2/material-icons-extended-android-1.6.2.pom, took 484 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-extended-android/1.6.2/material-icons-extended-android-1.6.2.module, took 989 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.2.0/material3-android-1.2.0.pom, took 452 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.2.0/material3-android-1.2.0.module, took 1 s 116 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-android/1.6.2/runtime-android-1.6.2.pom, took 538 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-android/1.6.2/runtime-android-1.6.2.module, took 1 s 494 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-saveable-android/1.6.2/runtime-saveable-android-1.6.2.pom, took 333 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-saveable-android/1.6.2/runtime-saveable-android-1.6.2.module, took 737 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.6.2/ui-android-1.6.2.pom, took 453 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.6.2/ui-android-1.6.2.module, took 1 s 113 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-android/1.6.2/ui-tooling-android-1.6.2.pom, took 424 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-android/1.6.2/ui-tooling-android-1.6.2.module, took 1 s 126 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-preview-android/1.6.2/ui-tooling-preview-android-1.6.2.pom, took 383 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-preview-android/1.6.2/ui-tooling-preview-android-1.6.2.module, took 1 s 193 ms
+Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-common-ktx/2.7.7/navigation-common-ktx-2.7.7.pom, took 326 ms
+Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-runtime/2.7.7/navigation-runtime-2.7.7.pom, took 989 ms
+Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-common-ktx/2.7.7/navigation-common-ktx-2.7.7.module, took 1 s 216 ms
+Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-runtime/2.7.7/navigation-runtime-2.7.7.module, took 1 s 349 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-android/1.6.2/animation-android-1.6.2.pom, took 634 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-android/1.6.2/animation-android-1.6.2.module, took 889 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-layout-android/1.6.2/foundation-layout-android-1.6.2.pom, took 629 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-layout-android/1.6.2/foundation-layout-android-1.6.2.module, took 907 ms
+Download https://dl.google.com/dl/android/maven2/androidx/savedstate/savedstate/1.2.1/savedstate-1.2.1.pom, took 595 ms
+Download https://dl.google.com/dl/android/maven2/androidx/savedstate/savedstate/1.2.1/savedstate-1.2.1.module, took 532 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core/2.7.0/lifecycle-livedata-core-2.7.0.pom, took 374 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core/2.7.0/lifecycle-livedata-core-2.7.0.module, took 1 s 155 ms
+Download https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.6/gson-2.8.6.pom, took 51 ms
+Download https://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.6/gson-parent-2.8.6.pom, took 74 ms
+Download https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.1.0/collection-1.1.0.pom, took 322 ms
+Download https://dl.google.com/dl/android/maven2/androidx/viewpager/viewpager/1.0.0/viewpager-1.0.0.pom, took 274 ms
+Download https://dl.google.com/dl/android/maven2/androidx/loader/loader/1.0.0/loader-1.0.0.pom, took 1 s 191 ms
+Download https://repo.maven.apache.org/maven2/com/squareup/okio/okio/3.0.0/okio-3.0.0.pom, took 55 ms
+Download https://repo.maven.apache.org/maven2/com/squareup/okio/okio/3.0.0/okio-3.0.0.module, took 30 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/annotations/20.1.0/annotations-20.1.0.pom, took 47 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.22/kotlin-stdlib-jdk8-1.8.22.pom, took 69 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.6.0/annotation-jvm-1.6.0.pom, took 1 s 79 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.6.0/annotation-jvm-1.6.0.module, took 395 ms
+Download https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/1.0/listenablefuture-1.0.pom, took 28 ms
+Download https://dl.google.com/dl/android/maven2/androidx/concurrent/concurrent-futures/1.1.0/concurrent-futures-1.1.0.pom, took 950 ms
+Download https://dl.google.com/dl/android/maven2/androidx/concurrent/concurrent-futures/1.1.0/concurrent-futures-1.1.0.module, took 542 ms
+Download https://dl.google.com/dl/android/maven2/androidx/startup/startup-runtime/1.1.1/startup-runtime-1.1.1.pom, took 958 ms
+Download https://dl.google.com/dl/android/maven2/androidx/startup/startup-runtime/1.1.1/startup-runtime-1.1.1.module, took 554 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.7.1/kotlinx-coroutines-core-jvm-1.7.1.pom, took 67 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.7.1/kotlinx-coroutines-core-jvm-1.7.1.module, took 95 ms
+Download https://dl.google.com/dl/android/maven2/androidx/tracing/tracing/1.0.0/tracing-1.0.0.pom, took 291 ms
+Download https://dl.google.com/dl/android/maven2/androidx/tracing/tracing/1.0.0/tracing-1.0.0.module, took 944 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-core/1.6.2/material-icons-core-1.6.2.pom, took 479 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-core/1.6.2/material-icons-core-1.6.2.module, took 455 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.4.0/annotation-experimental-1.4.0.pom, took 447 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.4.0/annotation-experimental-1.4.0.module, took 976 ms
+Download https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.4.0/collection-1.4.0.pom, took 475 ms
+Download https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.4.0/collection-1.4.0.module, took 475 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.22/kotlin-stdlib-common-1.8.22.pom, took 44 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-ripple/1.6.2/material-ripple-1.6.2.pom, took 922 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-ripple/1.6.2/material-ripple-1.6.2.module, took 481 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-text/1.6.2/ui-text-1.6.2.pom, took 212 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-core/1.6.2/animation-core-1.6.2.pom, took 319 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation/1.6.2/foundation-1.6.2.pom, took 346 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-text/1.6.2/ui-text-1.6.2.module, took 337 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-graphics/1.6.2/ui-graphics-1.6.2.pom, took 830 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-util/1.6.2/ui-util-1.6.2.pom, took 332 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-graphics/1.6.2/ui-graphics-1.6.2.module, took 317 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-util/1.6.2/ui-util-1.6.2.module, took 347 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation/1.6.2/foundation-1.6.2.module, took 1 s 194 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-core/1.6.2/animation-core-1.6.2.module, took 1 s 262 ms
+Download https://dl.google.com/dl/android/maven2/androidx/customview/customview-poolingcontainer/1.0.0/customview-poolingcontainer-1.0.0.pom, took 159 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-unit/1.6.2/ui-unit-1.6.2.pom, took 198 ms
+Download https://dl.google.com/dl/android/maven2/androidx/autofill/autofill/1.0.0/autofill-1.0.0.pom, took 276 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-geometry/1.6.2/ui-geometry-1.6.2.pom, took 347 ms
+Download https://dl.google.com/dl/android/maven2/androidx/customview/customview-poolingcontainer/1.0.0/customview-poolingcontainer-1.0.0.module, took 285 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-unit/1.6.2/ui-unit-1.6.2.module, took 336 ms
+Download https://dl.google.com/dl/android/maven2/androidx/emoji2/emoji2/1.2.0/emoji2-1.2.0.pom, took 328 ms
+Download https://dl.google.com/dl/android/maven2/androidx/emoji2/emoji2/1.2.0/emoji2-1.2.0.module, took 1 s 79 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-geometry/1.6.2/ui-geometry-1.6.2.module, took 1 s 437 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-data/1.6.2/ui-tooling-data-1.6.2.pom, took 618 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-data/1.6.2/ui-tooling-data-1.6.2.module, took 326 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material/1.6.2/material-1.6.2.pom, took 1 s 127 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material/1.6.2/material-1.6.2.module, took 431 ms
+Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-common/2.7.7/navigation-common-2.7.7.pom, took 1 s 284 ms
+Download https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-common/2.7.7/navigation-common-2.7.7.module, took 914 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata/2.7.0/lifecycle-livedata-2.7.0.pom, took 971 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata/2.7.0/lifecycle-livedata-2.7.0.module, took 548 ms
+Download https://dl.google.com/dl/android/maven2/androidx/customview/customview/1.0.0/customview-1.0.0.pom, took 1 s 821 ms
+Download https://repo.maven.apache.org/maven2/com/squareup/okio/okio-jvm/3.0.0/okio-jvm-3.0.0.pom, took 32 ms
+Download https://repo.maven.apache.org/maven2/com/squareup/okio/okio-jvm/3.0.0/okio-jvm-3.0.0.module, took 36 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.pom, took 36 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.22/kotlin-stdlib-common-1.9.22.pom, took 29 ms
+Download https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.22/kotlin-stdlib-jdk7-1.8.22.pom, took 30 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-core-android/1.6.2/material-icons-core-android-1.6.2.pom, took 1 s 469 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-core-android/1.6.2/material-icons-core-android-1.6.2.module, took 1 s 499 ms
+Download https://dl.google.com/dl/android/maven2/androidx/collection/collection-jvm/1.4.0/collection-jvm-1.4.0.pom, took 467 ms
+Download https://dl.google.com/dl/android/maven2/androidx/collection/collection-jvm/1.4.0/collection-jvm-1.4.0.module, took 1 s 66 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-ripple-android/1.6.2/material-ripple-android-1.6.2.pom, took 607 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-ripple-android/1.6.2/material-ripple-android-1.6.2.module, took 937 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-core-android/1.6.2/animation-core-android-1.6.2.pom, took 618 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-core-android/1.6.2/animation-core-android-1.6.2.module, took 881 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-android/1.6.2/foundation-android-1.6.2.pom, took 655 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-android/1.6.2/foundation-android-1.6.2.module, took 647 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-graphics-android/1.6.2/ui-graphics-android-1.6.2.pom, took 337 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-graphics-android/1.6.2/ui-graphics-android-1.6.2.module, took 481 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-text-android/1.6.2/ui-text-android-1.6.2.pom, took 376 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-text-android/1.6.2/ui-text-android-1.6.2.module, took 400 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-util-android/1.6.2/ui-util-android-1.6.2.pom, took 361 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-util-android/1.6.2/ui-util-android-1.6.2.module, took 288 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-geometry-android/1.6.2/ui-geometry-android-1.6.2.pom, took 330 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-geometry-android/1.6.2/ui-geometry-android-1.6.2.module, took 521 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-unit-android/1.6.2/ui-unit-android-1.6.2.pom, took 316 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-unit-android/1.6.2/ui-unit-android-1.6.2.module, took 348 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-process/2.7.0/lifecycle-process-2.7.0.pom, took 328 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-process/2.7.0/lifecycle-process-2.7.0.module, took 286 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-data-android/1.6.2/ui-tooling-data-android-1.6.2.pom, took 327 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-data-android/1.6.2/ui-tooling-data-android-1.6.2.module, took 321 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-android/1.6.2/material-android-1.6.2.pom, took 317 ms
+Download https://dl.google.com/dl/android/maven2/androidx/compose/material/material-android/1.6.2/material-android-1.6.2.module, took 314 ms
+Download https://dl.google.com/dl/android/maven2/androidx/collection/collection-ktx/1.1.0/collection-ktx-1.1.0.pom, took 274 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core-ktx/2.7.0/lifecycle-livedata-core-ktx-2.7.0.pom, took 280 ms
+Download https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core-ktx/2.7.0/lifecycle-livedata-core-ktx-2.7.0.module, took 288 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.7.0/annotation-1.7.0.pom, took 304 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.7.0/annotation-1.7.0.module, took 1 s 97 ms
+Download https://dl.google.com/dl/android/maven2/androidx/collection/collection-ktx/1.4.0/collection-ktx-1.4.0.pom, took 316 ms
+Download https://dl.google.com/dl/android/maven2/androidx/collection/collection-ktx/1.4.0/collection-ktx-1.4.0.module, took 329 ms
+Download https://dl.google.com/dl/android/maven2/androidx/emoji2/emoji2/1.3.0/emoji2-1.3.0.pom, took 291 ms
+Download https://dl.google.com/dl/android/maven2/androidx/emoji2/emoji2/1.3.0/emoji2-1.3.0.module, took 290 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.7.0/annotation-jvm-1.7.0.pom, took 287 ms
+Download https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.7.0/annotation-jvm-1.7.0.module, took 498 ms
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Configuration cache state could not be cached: field `aarMetadataArtifacts` of task `:app:checkDebugAarMetadata` of type `com.android.build.gradle.internal.tasks.CheckAarMetadataTask`: error writing value of type 'org.gradle.api.internal.artifacts.configurations.DefaultArtifactCollection'
+> Configuration `:app:debugRuntimeClasspath` contains AndroidX dependencies, but the `android.useAndroidX` property is not enabled, which may cause runtime issues.
+  Set `android.useAndroidX=true` in the `gradle.properties` file and retry.
+  The following AndroidX dependencies are detected:
+  :app:debugRuntimeClasspath -> androidx.compose.ui:ui-tooling:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-tooling-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.activity:activity-compose:1.8.2
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.activity:activity-ktx:1.8.2
+  :app:debugRuntimeClasspath -> com.google.dagger:hilt-android:2.50 -> androidx.activity:activity:1.8.2
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> androidx.annotation:annotation:1.7.0
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> androidx.annotation:annotation:1.7.0 -> androidx.annotation:annotation-jvm:1.7.0
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.collection:collection:1.4.0
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.collection:collection:1.4.0 -> androidx.collection:collection-jvm:1.4.0
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.collection:collection-ktx:1.4.0
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> com.mapbox.mapboxsdk:mapbox-android-gestures:0.7.0 -> androidx.core:core:1.12.0
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.annotation:annotation-experimental:1.4.0
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> com.mapbox.mapboxsdk:mapbox-android-gestures:0.7.0 -> androidx.core:core:1.12.0 -> androidx.concurrent:concurrent-futures:1.1.0
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> androidx.interpolator:interpolator:1.0.0
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.material3:material3-android:1.2.0 -> androidx.lifecycle:lifecycle-runtime:2.7.0
+  :app:debugRuntimeClasspath -> com.google.dagger:hilt-android:2.50 -> androidx.savedstate:savedstate:1.2.1 -> androidx.arch.core:core-common:2.2.0
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> androidx.fragment:fragment:1.5.5 -> androidx.loader:loader:1.0.0 -> androidx.lifecycle:lifecycle-livedata:2.7.0 -> androidx.arch.core:core-runtime:2.2.0
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.lifecycle:lifecycle-common:2.7.0
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.material3:material3-android:1.2.0 -> androidx.lifecycle:lifecycle-common-java8:2.7.0
+  :app:debugRuntimeClasspath -> androidx.lifecycle:lifecycle-runtime-ktx:2.7.0
+  :app:debugRuntimeClasspath -> androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.compose.runtime:runtime:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.runtime:runtime-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.compose.runtime:runtime-saveable:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.runtime:runtime-saveable-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose.ui:ui:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-android:1.6.2 -> androidx.autofill:autofill:1.0.0
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-geometry:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-geometry-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-util:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-util-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-graphics:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-graphics-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-unit:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-unit-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-text:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-text-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.foundation:foundation-android:1.6.2 -> androidx.emoji2:emoji2:1.3.0
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.foundation:foundation-android:1.6.2 -> androidx.emoji2:emoji2:1.3.0 -> androidx.lifecycle:lifecycle-process:2.7.0
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.foundation:foundation-android:1.6.2 -> androidx.emoji2:emoji2:1.3.0 -> androidx.startup:startup-runtime:1.1.1
+  :app:debugRuntimeClasspath -> com.google.dagger:hilt-android:2.50 -> androidx.activity:activity:1.8.2 -> androidx.tracing:tracing:1.0.0
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> androidx.fragment:fragment:1.5.5 -> androidx.loader:loader:1.0.0 -> androidx.lifecycle:lifecycle-livedata:2.7.0
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> androidx.fragment:fragment:1.5.5 -> androidx.lifecycle:lifecycle-livedata-core:2.7.0
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.material3:material3-android:1.2.0 -> androidx.lifecycle:lifecycle-viewmodel:2.7.0
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0
+  :app:debugRuntimeClasspath -> androidx.core:core-ktx:1.12.0
+  :app:debugRuntimeClasspath -> com.google.dagger:hilt-android:2.50 -> androidx.savedstate:savedstate:1.2.1
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.savedstate:savedstate-ktx:1.2.1
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.foundation:foundation-android:1.6.2 -> androidx.emoji2:emoji2:1.3.0 -> androidx.lifecycle:lifecycle-process:2.7.0 -> androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-tooling-data:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-tooling-data-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose.ui:ui-tooling-preview:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-tooling-preview-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.ui:ui-android:1.6.2 -> androidx.customview:customview-poolingcontainer:1.0.0
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.profileinstaller:profileinstaller:1.3.0
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.foundation:foundation:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.foundation:foundation-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.compose.animation:animation:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.animation:animation-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.animation:animation-core:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.animation:animation-core-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.compose.foundation:foundation-layout:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.foundation:foundation-layout-android:1.6.2
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> com.mapbox.mapboxsdk:mapbox-android-gestures:0.7.0 -> androidx.core:core:1.12.0 -> androidx.versionedparcelable:versionedparcelable:1.1.1
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.material:material:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.material:material-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.material:material-icons-core:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.material:material-icons-core-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose.material:material-icons-extended:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.material:material-icons-extended-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.material:material-ripple:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.material:material-ripple-android:1.6.2
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01
+  :app:debugRuntimeClasspath -> androidx.compose.material3:material3:1.2.0
+  :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.02.01 -> androidx.compose.material3:material3-android:1.2.0
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7 -> androidx.navigation:navigation-common:2.7.7
+  :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.7.7 -> androidx.navigation:navigation-runtime-ktx:2.7.7 -> androidx.navigation:navigation-common-ktx:2.7.7 -> androidx.navigation:navigation-common:2.7.7 -> androidx.navigation:navigation-runtime:2.7.7
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> androidx.fragment:fragment:1.5.5
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> androidx.fragment:fragment:1.5.5 -> androidx.loader:loader:1.0.0
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> androidx.fragment:fragment:1.5.5 -> androidx.viewpager:viewpager:1.0.0
+  :app:debugRuntimeClasspath -> org.maplibre.gl:android-sdk:10.0.2 -> androidx.fragment:fragment:1.5.5 -> androidx.viewpager:viewpager:1.0.0 -> androidx.customview:customview:1.0.0
+  :app:debugRuntimeClasspath -> androidx.room:room-runtime:2.6.1
+  :app:debugRuntimeClasspath -> androidx.room:room-runtime:2.6.1 -> androidx.room:room-common:2.6.1
+  :app:debugRuntimeClasspath -> androidx.room:room-ktx:2.6.1
+  :app:debugRuntimeClasspath -> androidx.room:room-runtime:2.6.1 -> androidx.sqlite:sqlite:2.4.0
+  :app:debugRuntimeClasspath -> androidx.room:room-runtime:2.6.1 -> androidx.sqlite:sqlite-framework:2.4.0
 
 * Try:
+> Run with --stacktrace option to get the stack trace.
 > Run with --info or --debug option to get more log output.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
 
-* Exception is:
-org.gradle.api.InvalidUserDataException: Invalid catalog definition:
-  - Problem: In version catalog libs, you can only call the 'from' method a single time.
-    
-    Reason: The method was called more than once.
-    
-    Possible solution: Remove further usages of the method call.
-    
-    For more information, please refer to https://docs.gradle.org/8.7/userguide/version_catalog_problems.html#too_many_import_invocation in the Gradle documentation.
-	at org.gradle.api.internal.catalog.problems.DefaultCatalogProblemBuilder.throwError(DefaultCatalogProblemBuilder.java:54)
-	at org.gradle.api.internal.catalog.DefaultVersionCatalogBuilder.throwVersionCatalogProblemException(DefaultVersionCatalogBuilder.java:223)
-	at org.gradle.api.internal.catalog.DefaultVersionCatalogBuilder.from(DefaultVersionCatalogBuilder.java:286)
-	at org.gradle.configuration.BuildTreePreparingProjectsPreparer.lambda$generateDependenciesAccessorsAndAssignPluginVersions$0(BuildTreePreparingProjectsPreparer.java:89)
-	at org.gradle.internal.management.DefaultDependencyResolutionManagement.versionCatalogs(DefaultDependencyResolutionManagement.java:132)
-	at org.gradle.configuration.BuildTreePreparingProjectsPreparer.generateDependenciesAccessorsAndAssignPluginVersions(BuildTreePreparingProjectsPreparer.java:84)
-	at org.gradle.configuration.BuildTreePreparingProjectsPreparer.prepareProjects(BuildTreePreparingProjectsPreparer.java:55)
-	at org.gradle.configuration.BuildOperationFiringProjectsPreparer$ConfigureBuild.run(BuildOperationFiringProjectsPreparer.java:52)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
-	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
-	at org.gradle.configuration.BuildOperationFiringProjectsPreparer.prepareProjects(BuildOperationFiringProjectsPreparer.java:40)
-	at org.gradle.initialization.VintageBuildModelController.lambda$prepareProjects$2(VintageBuildModelController.java:84)
-	at org.gradle.internal.model.StateTransitionController.lambda$doTransition$14(StateTransitionController.java:255)
-	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
-	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:254)
-	at org.gradle.internal.model.StateTransitionController.lambda$transitionIfNotPreviously$11(StateTransitionController.java:213)
-	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)
-	at org.gradle.internal.model.StateTransitionController.transitionIfNotPreviously(StateTransitionController.java:209)
-	at org.gradle.initialization.VintageBuildModelController.prepareProjects(VintageBuildModelController.java:84)
-	at org.gradle.initialization.VintageBuildModelController.getConfiguredModel(VintageBuildModelController.java:64)
-	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$withProjectsConfigured$1(DefaultBuildLifecycleController.java:133)
-	at org.gradle.internal.model.StateTransitionController.lambda$notInState$3(StateTransitionController.java:132)
-	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
-	at org.gradle.internal.model.StateTransitionController.notInState(StateTransitionController.java:128)
-	at org.gradle.internal.build.DefaultBuildLifecycleController.withProjectsConfigured(DefaultBuildLifecycleController.java:133)
-	at org.gradle.internal.build.DefaultBuildToolingModelController.locateBuilderForTarget(DefaultBuildToolingModelController.java:58)
-	at org.gradle.internal.buildtree.DefaultBuildTreeModelCreator$DefaultBuildTreeModelController.lambda$locateBuilderForTarget$0(DefaultBuildTreeModelCreator.java:64)
-	at org.gradle.internal.build.DefaultBuildLifecycleController.withToolingModels(DefaultBuildLifecycleController.java:327)
-	at org.gradle.internal.build.AbstractBuildState.withToolingModels(AbstractBuildState.java:146)
-	at org.gradle.internal.buildtree.DefaultBuildTreeModelCreator$DefaultBuildTreeModelController.locateBuilderForTarget(DefaultBuildTreeModelCreator.java:64)
-	at org.gradle.internal.buildtree.DefaultBuildTreeModelCreator$DefaultBuildTreeModelController.locateBuilderForDefaultTarget(DefaultBuildTreeModelCreator.java:59)
-	at org.gradle.tooling.internal.provider.runner.DefaultBuildController.getTarget(DefaultBuildController.java:136)
-	at org.gradle.tooling.internal.provider.runner.DefaultBuildController.getModel(DefaultBuildController.java:107)
-	at org.gradle.tooling.internal.consumer.connection.ParameterAwareBuildControllerAdapter.getModel(ParameterAwareBuildControllerAdapter.java:40)
-	at org.gradle.tooling.internal.consumer.connection.UnparameterizedBuildController.getModel(UnparameterizedBuildController.java:116)
-	at org.gradle.tooling.internal.consumer.connection.NestedActionAwareBuildControllerAdapter.getModel(NestedActionAwareBuildControllerAdapter.java:32)
-	at org.gradle.tooling.internal.consumer.connection.UnparameterizedBuildController.getModel(UnparameterizedBuildController.java:79)
-	at org.gradle.tooling.internal.consumer.connection.NestedActionAwareBuildControllerAdapter.getModel(NestedActionAwareBuildControllerAdapter.java:32)
-	at org.gradle.tooling.internal.consumer.connection.UnparameterizedBuildController.getModel(UnparameterizedBuildController.java:64)
-	at org.gradle.tooling.internal.consumer.connection.NestedActionAwareBuildControllerAdapter.getModel(NestedActionAwareBuildControllerAdapter.java:32)
-	at com.intellij.gradle.toolingExtension.impl.modelSerialization.ToolingSerializerConverter.lambda$new$0(ToolingSerializerConverter.java:24)
-	at com.intellij.gradle.toolingExtension.impl.telemetry.GradleOpenTelemetry.callWithSpan(GradleOpenTelemetry.java:55)
-	at com.intellij.gradle.toolingExtension.impl.telemetry.GradleOpenTelemetry.callWithSpan(GradleOpenTelemetry.java:31)
-	at com.intellij.gradle.toolingExtension.impl.modelSerialization.ToolingSerializerConverter.<init>(ToolingSerializerConverter.java:23)
-	at com.intellij.gradle.toolingExtension.impl.modelAction.GradleModelFetchAction.lambda$initAction$9(GradleModelFetchAction.java:171)
-	at com.intellij.gradle.toolingExtension.impl.telemetry.GradleOpenTelemetry.callWithSpan(GradleOpenTelemetry.java:55)
-	at com.intellij.gradle.toolingExtension.impl.telemetry.GradleOpenTelemetry.callWithSpan(GradleOpenTelemetry.java:31)
-	at com.intellij.gradle.toolingExtension.impl.modelAction.GradleModelFetchAction.initAction(GradleModelFetchAction.java:170)
-	at com.intellij.gradle.toolingExtension.impl.modelAction.GradleModelFetchAction.lambda$doExecute$4(GradleModelFetchAction.java:118)
-	at com.intellij.gradle.toolingExtension.impl.telemetry.GradleOpenTelemetry.callWithSpan(GradleOpenTelemetry.java:55)
-	at com.intellij.gradle.toolingExtension.impl.telemetry.GradleOpenTelemetry.callWithSpan(GradleOpenTelemetry.java:31)
-	at com.intellij.gradle.toolingExtension.impl.modelAction.GradleModelFetchAction.doExecute(GradleModelFetchAction.java:117)
-	at com.intellij.gradle.toolingExtension.impl.modelAction.GradleModelFetchAction.lambda$execute$1(GradleModelFetchAction.java:103)
-	at com.intellij.gradle.toolingExtension.impl.telemetry.GradleOpenTelemetry.callWithSpan(GradleOpenTelemetry.java:55)
-	at com.intellij.gradle.toolingExtension.impl.telemetry.GradleOpenTelemetry.callWithSpan(GradleOpenTelemetry.java:31)
-	at com.intellij.gradle.toolingExtension.impl.modelAction.GradleModelFetchAction.lambda$execute$2(GradleModelFetchAction.java:102)
-	at com.intellij.gradle.toolingExtension.impl.modelAction.GradleModelFetchAction.withOpenTelemetry(GradleModelFetchAction.java:297)
-	at com.intellij.gradle.toolingExtension.impl.modelAction.GradleModelFetchAction.lambda$execute$3(GradleModelFetchAction.java:101)
-	at com.intellij.gradle.toolingExtension.impl.util.GradleExecutorServiceUtil.withSingleThreadExecutor(GradleExecutorServiceUtil.java:18)
-	at com.intellij.gradle.toolingExtension.impl.modelAction.GradleModelFetchAction.execute(GradleModelFetchAction.java:100)
-	at com.intellij.gradle.toolingExtension.impl.modelAction.GradleModelFetchAction.execute(GradleModelFetchAction.java:33)
-	at org.gradle.tooling.internal.consumer.connection.InternalBuildActionAdapter.execute(InternalBuildActionAdapter.java:65)
-	at org.gradle.tooling.internal.provider.runner.AbstractClientProvidedBuildActionRunner$ActionAdapter.runAction(AbstractClientProvidedBuildActionRunner.java:131)
-	at org.gradle.tooling.internal.provider.runner.AbstractClientProvidedBuildActionRunner$ActionAdapter.beforeTasks(AbstractClientProvidedBuildActionRunner.java:99)
-	at org.gradle.internal.buildtree.DefaultBuildTreeModelCreator.beforeTasks(DefaultBuildTreeModelCreator.java:43)
-	at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$fromBuildModel$2(DefaultBuildTreeLifecycleController.java:83)
-	at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$runBuild$4(DefaultBuildTreeLifecycleController.java:120)
-	at org.gradle.internal.model.StateTransitionController.lambda$transition$6(StateTransitionController.java:169)
-	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
-	at org.gradle.internal.model.StateTransitionController.lambda$transition$7(StateTransitionController.java:169)
-	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
-	at org.gradle.internal.model.StateTransitionController.transition(StateTransitionController.java:169)
-	at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.runBuild(DefaultBuildTreeLifecycleController.java:117)
-	at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.fromBuildModel(DefaultBuildTreeLifecycleController.java:82)
-	at org.gradle.tooling.internal.provider.runner.AbstractClientProvidedBuildActionRunner.runClientAction(AbstractClientProvidedBuildActionRunner.java:43)
-	at org.gradle.tooling.internal.provider.runner.ClientProvidedPhasedActionRunner.run(ClientProvidedPhasedActionRunner.java:53)
-	at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
-	at org.gradle.internal.buildtree.ProblemReportingBuildActionRunner.run(ProblemReportingBuildActionRunner.java:49)
-	at org.gradle.launcher.exec.BuildOutcomeReportingBuildActionRunner.run(BuildOutcomeReportingBuildActionRunner.java:65)
-	at org.gradle.tooling.internal.provider.FileSystemWatchingBuildActionRunner.run(FileSystemWatchingBuildActionRunner.java:140)
-	at org.gradle.launcher.exec.BuildCompletionNotifyingBuildActionRunner.run(BuildCompletionNotifyingBuildActionRunner.java:41)
-	at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.lambda$execute$0(RootBuildLifecycleBuildActionExecutor.java:40)
-	at org.gradle.composite.internal.DefaultRootBuildState.run(DefaultRootBuildState.java:123)
-	at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.execute(RootBuildLifecycleBuildActionExecutor.java:40)
-	at org.gradle.internal.buildtree.InitDeprecationLoggingActionExecutor.execute(InitDeprecationLoggingActionExecutor.java:66)
-	at org.gradle.internal.buildtree.InitProblems.execute(InitProblems.java:36)
-	at org.gradle.internal.buildtree.DefaultBuildTreeContext.execute(DefaultBuildTreeContext.java:40)
-	at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.lambda$execute$0(BuildTreeLifecycleBuildActionExecutor.java:71)
-	at org.gradle.internal.buildtree.BuildTreeState.run(BuildTreeState.java:60)
-	at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.execute(BuildTreeLifecycleBuildActionExecutor.java:71)
-	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:61)
-	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:57)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:200)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:195)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
-	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor.execute(RunAsBuildOperationBuildActionExecutor.java:57)
-	at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.lambda$execute$0(RunAsWorkerThreadBuildActionExecutor.java:36)
-	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:264)
-	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:128)
-	at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.execute(RunAsWorkerThreadBuildActionExecutor.java:36)
-	at org.gradle.tooling.internal.provider.continuous.ContinuousBuildActionExecutor.execute(ContinuousBuildActionExecutor.java:110)
-	at org.gradle.tooling.internal.provider.SubscribableBuildActionExecutor.execute(SubscribableBuildActionExecutor.java:64)
-	at org.gradle.internal.session.DefaultBuildSessionContext.execute(DefaultBuildSessionContext.java:46)
-	at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:92)
-	at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:80)
-	at org.gradle.internal.session.BuildSessionState.run(BuildSessionState.java:71)
-	at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:62)
-	at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:41)
-	at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:64)
-	at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:32)
-	at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:51)
-	at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:39)
-	at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:47)
-	at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:31)
-	at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:65)
-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-	at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:39)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-	at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:29)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-	at org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(RequestStopIfSingleUsedDaemon.java:35)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:78)
-	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:75)
-	at org.gradle.util.internal.Swapper.swap(Swapper.java:38)
-	at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:75)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-	at org.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.java:64)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-	at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:63)
-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-	at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:297)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
-Fix with AI
+BUILD FAILED in 7m 31s
+Configuration cache entry discarded due to serialization error.

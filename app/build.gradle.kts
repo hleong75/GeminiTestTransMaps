@@ -56,6 +56,7 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
 
     implementation(libs.maplibre.android.sdk)
+    implementation(libs.maplibre.android.sdk.geojson)
 
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
